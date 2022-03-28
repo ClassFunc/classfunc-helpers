@@ -1,5 +1,5 @@
 {
-  "name": "cf-helpers",
+  "name": "classfunc-helpers",
   "version": "1.0.0",
   "description": "ClassFunc Helpers",
   "main": "lib/index.js",

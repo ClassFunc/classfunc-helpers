@@ -1,7 +1,7 @@
 // @ts-ignore
 import {isPlainObject} from 'lodash/lang';
 
-export const toJSON = (objOrString: object | string): string => {
+export const toJSONString = (objOrString: object | string): string => {
     if (typeof objOrString === 'string') {
         try {
             objOrString = JSON.parse(objOrString);

@@ -2,7 +2,7 @@ import {isEqual, isPlainObject, transform} from 'lodash';
 
 // @ts-ignore
 import {diff} from 'deep-diff';
-import {toJSON} from "./jsonHelper";
+import {toJSONString} from "./jsonHelper";
 
 type IKind = 'N' | 'D' | 'E' | 'A'
 
@@ -19,16 +19,9 @@ interface IDiffObject {
     rhs: object
 }
 
-const diffExplain = (...args: object[]): string[] => {
-    // console.log({args})
-    let diffValue;
-    if (args.length === 2) {
-        const [beforeData, afterData] = args;
-        diffValue = diff(beforeData, afterData);
-    } else {
-        diffValue = args[0];
-    }
-    const diffArr: IDiffObject[] = JSON.parse(JSON.stringify(diffValue));
+
+const diffExplain = (before: object, after?: object): string[] => {
+    let diffArr = diffObjects(before, after);
     const explain: Record<IKind, string> = {
         'N': 'added',
         'D': 'deleted',
@@ -42,35 +35,29 @@ const diffExplain = (...args: object[]): string[] => {
         if (itemKind) {
             kindExplain = explain[item.kind];
         }
-        return `${explain[diffObj.kind]} ${toJSON(
+        return `${explain[diffObj.kind]} ${toJSONString(
             diffObj.path?.join('.'))} ${diffObj.index > -1
             ? `at ${diffObj.index}`
-            : ''} ${itemKind ? `${toJSON(kindExplain)} ${itemKind === 'N' ? toJSON(
-            item.rhs) : toJSON(item.lhs)}` : `${toJSON(diffObj.lhs)} -> ${toJSON(
+            : ''} ${itemKind ? `${toJSONString(kindExplain)} ${itemKind === 'N' ? toJSONString(
+            item.rhs) : toJSONString(item.lhs)}` : `${toJSONString(diffObj.lhs)} -> ${toJSONString(
             diffObj.rhs)}`}`;
     });
 };
 
-const diffJson = (...args: object[]) => {
-    let diffValue;
-    if (args.length === 2) {
-        const [beforeData, afterData] = args;
-        diffValue = diff(beforeData, afterData);
-    } else {
-        diffValue = args[0];
-    }
+const diffObjects = (before: object, after?: object): IDiffObject[] => {
+    let diffValue = diff(before, after);
     return JSON.parse(JSON.stringify(diffValue));
 };
 
 /**
- * Deep diff between two object, using lodash
- * @param  {Object} object Object compared
- * @param  {Object} base   Object to compare with
- * @return {Object}        Return a new object who represent the diff
+ * Deep diff between two after, using lodash
+ * @param  {Object} after Object compared
+ * @param  {Object} before   Object to compare with
+ * @return {Object}        Return a new after who represent the diff
  */
-function difference(object: object, base: object) {
-    if (!base)//created
-        return object;
+function difference(after: object, before?: object) {
+    if (!before)//created
+        return after;
 
     // else updated or deleted;
     function changes(object: object, base: object) {
@@ -84,11 +71,11 @@ function difference(object: object, base: object) {
         });
     }
 
-    return changes(object, base);
+    return changes(after, before);
 }
 
 export {
     diffExplain,
-    diffJson,
+    diffObjects,
     difference
 }
