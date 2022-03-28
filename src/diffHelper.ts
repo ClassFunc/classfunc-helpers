@@ -4,9 +4,9 @@ import {isEqual, isPlainObject, transform} from 'lodash';
 import {diff} from 'deep-diff';
 import {toJSONString} from "./jsonHelper";
 
-type IKind = 'N' | 'D' | 'E' | 'A'
+export type IKind = 'N' | 'D' | 'E' | 'A'
 
-interface IDiffObject {
+export interface IDiffObject {
     item: {
         kind: IKind,
         lhs: object,

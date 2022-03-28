@@ -4,11 +4,29 @@
 
 ## Table of contents
 
+### Interfaces
+
+- [IDiffObject](../interfaces/diff.IDiffObject.md)
+
+### Type aliases
+
+- [IKind](diff.md#ikind)
+
 ### Functions
 
 - [diffExplain](diff.md#diffexplain)
 - [diffObjects](diff.md#diffobjects)
 - [difference](diff.md#difference)
+
+## Type aliases
+
+### IKind
+
+Ƭ **IKind**: ``"N"`` \| ``"D"`` \| ``"E"`` \| ``"A"``
+
+#### Defined in
+
+[diffHelper.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/5933d9f/src/diffHelper.ts#L7)
 
 ## Functions
 
@@ -29,13 +47,13 @@
 
 #### Defined in
 
-[diffHelper.ts:23](https://github.com/ClassFunc/classfunc-helpers/blob/1a9eb72/src/diffHelper.ts#L23)
+[diffHelper.ts:23](https://github.com/ClassFunc/classfunc-helpers/blob/5933d9f/src/diffHelper.ts#L23)
 
 ___
 
 ### diffObjects
 
-▸ **diffObjects**(`before`, `after?`): `IDiffObject`[]
+▸ **diffObjects**(`before`, `after?`): [`IDiffObject`](../interfaces/diff.IDiffObject.md)[]
 
 #### Parameters
 
@@ -46,11 +64,11 @@ ___
 
 #### Returns
 
-`IDiffObject`[]
+[`IDiffObject`](../interfaces/diff.IDiffObject.md)[]
 
 #### Defined in
 
-[diffHelper.ts:47](https://github.com/ClassFunc/classfunc-helpers/blob/1a9eb72/src/diffHelper.ts#L47)
+[diffHelper.ts:47](https://github.com/ClassFunc/classfunc-helpers/blob/5933d9f/src/diffHelper.ts#L47)
 
 ___
 
@@ -75,4 +93,4 @@ Return a new after who represent the diff
 
 #### Defined in
 
-[diffHelper.ts:58](https://github.com/ClassFunc/classfunc-helpers/blob/1a9eb72/src/diffHelper.ts#L58)
+[diffHelper.ts:58](https://github.com/ClassFunc/classfunc-helpers/blob/5933d9f/src/diffHelper.ts#L58)
