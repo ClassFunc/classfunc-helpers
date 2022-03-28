@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && yarn generate-docs",
+    "generate-docs": "typedoc --plugin typedoc-plugin-markdown --out docs src/index.ts"
   },
   "keywords": [],
   "author": "ClassFunc Softwares JSC",
@@ -15,6 +16,9 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.180"
+    "@types/lodash": "^4.14.180",
+    "typedoc": "^0.22.13",
+    "typedoc-plugin-markdown": "^3.11.14",
+    "typescript": "^4.6.3"
   }
 }
