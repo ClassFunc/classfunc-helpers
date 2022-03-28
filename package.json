@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc && yarn generate-docs",
+    "build": "tsc && yarn generate-docs && git add --all && git commit -m 'build'",
     "generate-docs": "typedoc --plugin typedoc-plugin-markdown --readme ./README.md --out docs src/index.ts"
   },
   "keywords": [],
