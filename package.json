@@ -5,8 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "publish": "npm publish"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "ClassFunc Softwares JSC",
