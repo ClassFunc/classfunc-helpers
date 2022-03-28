@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc && yarn generate-docs",
+    "build": "tsc && yarn generate-docs && cp -fr docs/ ./",
     "generate-docs": "typedoc --plugin typedoc-plugin-markdown --out docs src/index.ts"
   },
   "keywords": [],
