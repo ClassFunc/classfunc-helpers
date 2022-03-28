@@ -12,7 +12,7 @@ export const toJSONString = (objOrString: object | string): string => {
     return JSON.stringify(objOrString, null, 2);
 };
 
-export const toObject = (string: string): any => {
+export const toObject = (string: any): any => {
     return JSON.parse(string);
 };
 
