@@ -6,7 +6,6 @@ export const toJSONString = (objOrString: object | string): string => {
         try {
             objOrString = JSON.parse(objOrString);
         } catch (e) {
-            objOrString = {};
         }
     }
     return JSON.stringify(objOrString, null, 2);
