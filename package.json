@@ -10,6 +10,9 @@
   },
   "keywords": [],
   "author": "ClassFunc Softwares JSC",
+  "repository": {
+    "url": "https://github.com/ClassFunc/classfunc-helpers.git"
+  },
   "license": "ISC",
   "dependencies": {
     "deep-diff": "^1.0.2",
