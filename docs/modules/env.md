@@ -9,8 +9,10 @@
 - [ENV](env.md#env)
 - [FIREBASE\_AUTH\_EMULATOR\_HOST](env.md#firebase_auth_emulator_host)
 - [FIREBASE\_DATABASE\_EMULATOR\_HOST](env.md#firebase_database_emulator_host)
+- [FIREBASE\_DEBUG\_MODE](env.md#firebase_debug_mode)
 - [FIREBASE\_STORAGE\_EMULATOR\_HOST](env.md#firebase_storage_emulator_host)
 - [FIRESTORE\_EMULATOR\_HOST](env.md#firestore_emulator_host)
+- [FUNCTIONS\_EMULATOR](env.md#functions_emulator)
 - [IS\_DEV](env.md#is_dev)
 - [IS\_FIREBASE\_CLI](env.md#is_firebase_cli)
 - [IS\_PROD](env.md#is_prod)
@@ -24,7 +26,7 @@
 
 #### Defined in
 
-[envHelper.ts:3](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/envHelper.ts#L3)
+[envHelper.ts:3](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L3)
 
 ___
 
@@ -34,7 +36,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:9](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/envHelper.ts#L9)
+[envHelper.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L11)
 
 ___
 
@@ -44,7 +46,17 @@ ___
 
 #### Defined in
 
-[envHelper.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/envHelper.ts#L11)
+[envHelper.ts:13](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L13)
+
+___
+
+### FIREBASE\_DEBUG\_MODE
+
+• `Const` **FIREBASE\_DEBUG\_MODE**: `boolean`
+
+#### Defined in
+
+[envHelper.ts:10](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L10)
 
 ___
 
@@ -54,7 +66,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/envHelper.ts#L12)
+[envHelper.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L14)
 
 ___
 
@@ -64,7 +76,17 @@ ___
 
 #### Defined in
 
-[envHelper.ts:10](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/envHelper.ts#L10)
+[envHelper.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L12)
+
+___
+
+### FUNCTIONS\_EMULATOR
+
+• `Const` **FUNCTIONS\_EMULATOR**: `boolean`
+
+#### Defined in
+
+[envHelper.ts:9](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L9)
 
 ___
 
@@ -74,7 +96,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/envHelper.ts#L4)
+[envHelper.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L4)
 
 ___
 
@@ -84,7 +106,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/envHelper.ts#L8)
+[envHelper.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L8)
 
 ___
 
@@ -94,7 +116,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/envHelper.ts#L6)
+[envHelper.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L6)
 
 ___
 
@@ -104,4 +126,4 @@ ___
 
 #### Defined in
 
-[envHelper.ts:5](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/envHelper.ts#L5)
+[envHelper.ts:5](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L5)
