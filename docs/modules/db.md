@@ -21,10 +21,9 @@
 | `db` | `object` | `undefined` |
 | `values` | `any`[] | `undefined` |
 | `collectionPath` | `string` | `undefined` |
-| `docIdField` | `string` | `undefined` |
+| `docIdField` | `string` \| `Function` | `undefined` |
 | `size` | `number` | `500` |
-| `setOptions` | `Object` | `undefined` |
-| `setOptions.merge` | `boolean` | `true` |
+| `setOptions` | `object` | `undefined` |
 
 #### Returns
 
@@ -32,4 +31,4 @@
 
 #### Defined in
 
-[dbHelper.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/43d4baa/src/dbHelper.ts#L6)
+[dbHelper.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/b5f96a0/src/dbHelper.ts#L7)
