@@ -16,6 +16,7 @@ const toJSONString = (value: any, format? = true): string => {
 const toObject = (value: any): any => {
     return JSON.parse(toJSONString(value, false));
 };
+const toJSON = toObject
 
 const omitByDeep = (obj, shouldOmit) => {
     obj = clone(obj);
@@ -47,6 +48,7 @@ const logJSON = (...value: any[]) => {
 export {
     toJSONString,
     toObject,
+    toJSON,
     removeUndefinedDeep,
     omitByDeep,
     removeUndefined,

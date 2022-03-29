@@ -10,6 +10,7 @@
 - [omitByDeep](json.md#omitbydeep)
 - [removeUndefined](json.md#removeundefined)
 - [removeUndefinedDeep](json.md#removeundefineddeep)
+- [toJSON](json.md#tojson)
 - [toJSONString](json.md#tojsonstring)
 - [toObject](json.md#toobject)
 
@@ -31,7 +32,7 @@
 
 #### Defined in
 
-[jsonHelper.ts:41](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/jsonHelper.ts#L41)
+[jsonHelper.ts:42](https://github.com/ClassFunc/classfunc-helpers/blob/9f9d7b2/src/jsonHelper.ts#L42)
 
 ___
 
@@ -52,7 +53,7 @@ ___
 
 #### Defined in
 
-[jsonHelper.ts:20](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/jsonHelper.ts#L20)
+[jsonHelper.ts:21](https://github.com/ClassFunc/classfunc-helpers/blob/9f9d7b2/src/jsonHelper.ts#L21)
 
 ___
 
@@ -72,7 +73,7 @@ ___
 
 #### Defined in
 
-[jsonHelper.ts:33](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/jsonHelper.ts#L33)
+[jsonHelper.ts:34](https://github.com/ClassFunc/classfunc-helpers/blob/9f9d7b2/src/jsonHelper.ts#L34)
 
 ___
 
@@ -92,7 +93,27 @@ ___
 
 #### Defined in
 
-[jsonHelper.ts:37](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/jsonHelper.ts#L37)
+[jsonHelper.ts:38](https://github.com/ClassFunc/classfunc-helpers/blob/9f9d7b2/src/jsonHelper.ts#L38)
+
+___
+
+### toJSON
+
+▸ **toJSON**(`value`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+[jsonHelper.ts:19](https://github.com/ClassFunc/classfunc-helpers/blob/9f9d7b2/src/jsonHelper.ts#L19)
 
 ___
 
@@ -113,7 +134,7 @@ ___
 
 #### Defined in
 
-[jsonHelper.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/jsonHelper.ts#L8)
+[jsonHelper.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/9f9d7b2/src/jsonHelper.ts#L8)
 
 ___
 
@@ -133,4 +154,4 @@ ___
 
 #### Defined in
 
-[jsonHelper.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/jsonHelper.ts#L16)
+[jsonHelper.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/9f9d7b2/src/jsonHelper.ts#L16)
