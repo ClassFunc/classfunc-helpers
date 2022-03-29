@@ -12,7 +12,7 @@
 
 ### batchSetAsync
 
-▸ **batchSetAsync**(`db`, `values`, `size?`, `collectionPath`, `docIdField`, `setOptions?`): `Promise`<`unknown`[]\>
+▸ **batchSetAsync**(`db`, `values`, `collectionPath`, `docIdField`, `size?`, `setOptions?`): `Promise`<`unknown`[]\>
 
 #### Parameters
 
@@ -20,9 +20,9 @@
 | :------ | :------ | :------ |
 | `db` | `object` | `undefined` |
 | `values` | `any`[] | `undefined` |
-| `size` | `number` | `500` |
 | `collectionPath` | `string` | `undefined` |
 | `docIdField` | `string` | `undefined` |
+| `size` | `number` | `500` |
 | `setOptions` | `Object` | `undefined` |
 | `setOptions.merge` | `boolean` | `true` |
 
@@ -32,4 +32,4 @@
 
 #### Defined in
 
-[dbHelper.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/74c7b26/src/dbHelper.ts#L6)
+[dbHelper.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/43d4baa/src/dbHelper.ts#L6)

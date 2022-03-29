@@ -5,9 +5,9 @@ import {toJSON} from "./jsonHelper";
 
 const batchSetAsync = async (db: object,
                              values: any[],
-                             size = 500,
                              collectionPath: string,
                              docIdField: string,
+                             size = 500,
                              setOptions = {merge: true}) => {
     const batchPromises = chunk(values, size)
         .map(async ck => new Promise((resolve, reject) => {
