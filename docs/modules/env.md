@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[envHelper.ts:3](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L3)
+[envHelper.ts:3](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L3)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L11)
+[envHelper.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L11)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:13](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L13)
+[envHelper.ts:13](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L13)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:10](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L10)
+[envHelper.ts:10](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L10)
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L14)
+[envHelper.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L14)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L12)
+[envHelper.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L12)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:9](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L9)
+[envHelper.ts:9](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L9)
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L4)
+[envHelper.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L4)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L8)
+[envHelper.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L8)
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L6)
+[envHelper.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L6)
 
 ___
 
@@ -126,4 +126,4 @@ ___
 
 #### Defined in
 
-[envHelper.ts:5](https://github.com/ClassFunc/classfunc-helpers/blob/52cd7d0/src/envHelper.ts#L5)
+[envHelper.ts:5](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L5)
