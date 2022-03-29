@@ -14,6 +14,8 @@ const toJSONString = (value: any, format? = true): string => {
 };
 
 const toObject = (value: any): any => {
+    if (typeof value === "string")
+        return JSON.parse(value)
     return JSON.parse(toJSONString(value, false));
 };
 const toJSON = toObject
