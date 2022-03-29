@@ -6,11 +6,75 @@
 
 ### Functions
 
+- [logJSON](json.md#logjson)
+- [omitByDeep](json.md#omitbydeep)
+- [removeUndefined](json.md#removeundefined)
 - [removeUndefinedDeep](json.md#removeundefineddeep)
 - [toJSONString](json.md#tojsonstring)
 - [toObject](json.md#toobject)
 
 ## Functions
+
+### logJSON
+
+▸ **logJSON**(`value`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[jsonHelper.ts:37](https://github.com/ClassFunc/classfunc-helpers/blob/0a4160e/src/jsonHelper.ts#L37)
+
+___
+
+### omitByDeep
+
+▸ **omitByDeep**(`obj`, `shouldOmit`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `obj` | `any` |
+| `shouldOmit` | `any` |
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+[jsonHelper.ts:20](https://github.com/ClassFunc/classfunc-helpers/blob/0a4160e/src/jsonHelper.ts#L20)
+
+___
+
+### removeUndefined
+
+▸ **removeUndefined**(`obj`): `any`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `obj` | `any` |
+
+#### Returns
+
+`any`
+
+#### Defined in
+
+[jsonHelper.ts:33](https://github.com/ClassFunc/classfunc-helpers/blob/0a4160e/src/jsonHelper.ts#L33)
+
+___
 
 ### removeUndefinedDeep
 
@@ -28,7 +92,7 @@
 
 #### Defined in
 
-[jsonHelper.ts:18](https://github.com/ClassFunc/classfunc-helpers/blob/fcf02d2/src/jsonHelper.ts#L18)
+[jsonHelper.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/0a4160e/src/jsonHelper.ts#L16)
 
 ___
 
@@ -48,7 +112,7 @@ ___
 
 #### Defined in
 
-[jsonHelper.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/fcf02d2/src/jsonHelper.ts#L4)
+[jsonHelper.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/0a4160e/src/jsonHelper.ts#L8)
 
 ___
 
@@ -68,4 +132,4 @@ ___
 
 #### Defined in
 
-[jsonHelper.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/fcf02d2/src/jsonHelper.ts#L14)
+[jsonHelper.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/0a4160e/src/jsonHelper.ts#L12)
