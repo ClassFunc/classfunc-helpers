@@ -33,6 +33,23 @@ const getEmulatorsConfig = () => {
     return get(getFirebaseConfig(), 'emulators')
 }
 
+const setFirebaseEmulators = () => {
+    const fConfig = getFirebaseConfig()
+    process.env.GCLOUD_PROJECT = get(fConfig, 'projects.default')
+
+    const authPort = get(fConfig, 'emulators.auth.port')
+    const functionsPort = get(fConfig, 'emulators.functions.port')
+    const firestorePort = get(fConfig, 'emulators.firestore.port')
+    const storagePort = get(fConfig, 'emulators.storage.port')
+    const localhost = port => `localhost:${port}`
+    if (authPort)
+        process.env.FIREBASE_AUTH_EMULATOR_HOST = localhost(authPort)
+    if (firestorePort)
+        process.env.FIRESTORE_EMULATOR_HOST = localhost(firestorePort)
+    if (storagePort)
+        process.env.FIREBASE_STORAGE_EMULATOR_HOST = localhost(storagePort)
+}
+
 export {
     IS_DEV,
     IS_STG,
@@ -50,5 +67,6 @@ export {
     GOOGLE_APPLICATION_CREDENTIALS,
     getEmulatorsConfig,
     getFirebaseConfig,
+    setFirebaseEmulators,
 }
 
