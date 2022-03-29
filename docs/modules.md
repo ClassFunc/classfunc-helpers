@@ -6,6 +6,7 @@
 
 ### Namespaces
 
+- [db](modules/db.md)
 - [diff](modules/diff.md)
 - [env](modules/env.md)
 - [json](modules/json.md)
