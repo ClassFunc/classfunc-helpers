@@ -1,8 +1,12 @@
-import {isEmpty, isEqual, isPlainObject, transform} from 'lodash';
+// @ts-nocheck
 
-// @ts-ignore
+import {isEmpty, isEqual, isPlainObject, set, transform, uniq} from 'lodash';
 import {diff} from 'deep-diff';
 import {toJSONString, toObject} from "./jsonHelper";
+import get from "lodash/get";
+import groupBy from "lodash/groupBy";
+import compact from "lodash/compact";
+import flattenDeep from "lodash/flattenDeep";
 
 export type IKind = 'N' | 'D' | 'E' | 'A'
 
@@ -44,18 +48,35 @@ const diffExplain = (before: object, after?: object): string[] => {
     });
 };
 
-const diffObjects = (before: any, after?: any, toPlainObject = true): IDiffObject[] => {
+const diffObjects = (before: any, after?: any, identities?: string[]): IDiffObject[] => {
     let diffValue = diff(before, after);
     if (isEmpty(diffValue))
         return []
     const mapValues = (values: IDiffObject[]) => {
-        return values.map((o: IDiffObject) => ({
-                ...o,
-                [o.path.join('.')]: {before: o.lhs, after: o.rhs},
-            }),
+        const ret = values.map((o: IDiffObject) => {
+                return ({
+                    ...set(o, o.path.join('.'), {before: o.lhs, after: o.rhs}),
+                    path: [...o.path, o.path.join('.')],
+                })
+            },
         )
+        identities = identities ?? uniq(ret.map(r => r.path[0]))
+        return mapIdentities(ret, identities)
     }
-    return toPlainObject ? toObject(mapValues(diffValue)) : diffValue;
+    const mapIdentities = (values: IDiffObject[], ids) => {
+        const val = values.map(d => {
+            return (!Array.isArray(ids) ? [ids] : ids).map(id => {
+                const path = get(d, 'path');
+                if (!path.includes(id))
+                    return;
+                const changes = get(d, id);
+                if (changes)
+                    return {...changes, __identity__: id};
+            });
+        });
+        return groupBy(compact(flattenDeep(val)), '__identity__')
+    }
+    return toObject(mapValues(diffValue))
 };
 const diffValues = diffObjects
 

@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[diffHelper.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/13600d9/src/diffHelper.ts#L7)
+[diffHelper.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/3569c4c/src/diffHelper.ts#L11)
 
 ## Functions
 
@@ -50,7 +50,7 @@
 
 #### Defined in
 
-[diffHelper.ts:88](https://github.com/ClassFunc/classfunc-helpers/blob/13600d9/src/diffHelper.ts#L88)
+[diffHelper.ts:109](https://github.com/ClassFunc/classfunc-helpers/blob/3569c4c/src/diffHelper.ts#L109)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 #### Defined in
 
-[diffHelper.ts:87](https://github.com/ClassFunc/classfunc-helpers/blob/13600d9/src/diffHelper.ts#L87)
+[diffHelper.ts:108](https://github.com/ClassFunc/classfunc-helpers/blob/3569c4c/src/diffHelper.ts#L108)
 
 ___
 
@@ -92,21 +92,21 @@ ___
 
 #### Defined in
 
-[diffHelper.ts:23](https://github.com/ClassFunc/classfunc-helpers/blob/13600d9/src/diffHelper.ts#L23)
+[diffHelper.ts:27](https://github.com/ClassFunc/classfunc-helpers/blob/3569c4c/src/diffHelper.ts#L27)
 
 ___
 
 ### diffObjects
 
-▸ **diffObjects**(`before`, `after?`, `toPlainObject?`): [`IDiffObject`](../interfaces/diff.IDiffObject.md)[]
+▸ **diffObjects**(`before`, `after?`, `identities?`): [`IDiffObject`](../interfaces/diff.IDiffObject.md)[]
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `before` | `any` | `undefined` |
-| `after?` | `any` | `undefined` |
-| `toPlainObject` | `boolean` | `true` |
+| Name | Type |
+| :------ | :------ |
+| `before` | `any` |
+| `after?` | `any` |
+| `identities?` | `string`[] |
 
 #### Returns
 
@@ -114,21 +114,21 @@ ___
 
 #### Defined in
 
-[diffHelper.ts:47](https://github.com/ClassFunc/classfunc-helpers/blob/13600d9/src/diffHelper.ts#L47)
+[diffHelper.ts:51](https://github.com/ClassFunc/classfunc-helpers/blob/3569c4c/src/diffHelper.ts#L51)
 
 ___
 
 ### diffValues
 
-▸ **diffValues**(`before`, `after?`, `toPlainObject?`): [`IDiffObject`](../interfaces/diff.IDiffObject.md)[]
+▸ **diffValues**(`before`, `after?`, `identities?`): [`IDiffObject`](../interfaces/diff.IDiffObject.md)[]
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `before` | `any` | `undefined` |
-| `after?` | `any` | `undefined` |
-| `toPlainObject` | `boolean` | `true` |
+| Name | Type |
+| :------ | :------ |
+| `before` | `any` |
+| `after?` | `any` |
+| `identities?` | `string`[] |
 
 #### Returns
 
@@ -136,7 +136,7 @@ ___
 
 #### Defined in
 
-[diffHelper.ts:60](https://github.com/ClassFunc/classfunc-helpers/blob/13600d9/src/diffHelper.ts#L60)
+[diffHelper.ts:81](https://github.com/ClassFunc/classfunc-helpers/blob/3569c4c/src/diffHelper.ts#L81)
 
 ___
 
@@ -161,4 +161,4 @@ Return a new after who represent the diff
 
 #### Defined in
 
-[diffHelper.ts:68](https://github.com/ClassFunc/classfunc-helpers/blob/13600d9/src/diffHelper.ts#L68)
+[diffHelper.ts:89](https://github.com/ClassFunc/classfunc-helpers/blob/3569c4c/src/diffHelper.ts#L89)
