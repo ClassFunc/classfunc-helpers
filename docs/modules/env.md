@@ -8,11 +8,14 @@
 
 - [ENV](env.md#env)
 - [FIREBASE\_AUTH\_EMULATOR\_HOST](env.md#firebase_auth_emulator_host)
+- [FIREBASE\_CONFIG](env.md#firebase_config)
 - [FIREBASE\_DATABASE\_EMULATOR\_HOST](env.md#firebase_database_emulator_host)
 - [FIREBASE\_DEBUG\_MODE](env.md#firebase_debug_mode)
 - [FIREBASE\_STORAGE\_EMULATOR\_HOST](env.md#firebase_storage_emulator_host)
 - [FIRESTORE\_EMULATOR\_HOST](env.md#firestore_emulator_host)
 - [FUNCTIONS\_EMULATOR](env.md#functions_emulator)
+- [GCLOUD\_PROJECT](env.md#gcloud_project)
+- [GOOGLE\_APPLICATION\_CREDENTIALS](env.md#google_application_credentials)
 - [IS\_DEV](env.md#is_dev)
 - [IS\_FIREBASE\_CLI](env.md#is_firebase_cli)
 - [IS\_PROD](env.md#is_prod)
@@ -26,7 +29,7 @@
 
 #### Defined in
 
-[envHelper.ts:3](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L3)
+[envHelper.ts:3](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/envHelper.ts#L3)
 
 ___
 
@@ -36,7 +39,17 @@ ___
 
 #### Defined in
 
-[envHelper.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L11)
+[envHelper.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/envHelper.ts#L11)
+
+___
+
+### FIREBASE\_CONFIG
+
+• `Const` **FIREBASE\_CONFIG**: `any` = `process.env.FIREBASE_CONFIG`
+
+#### Defined in
+
+[envHelper.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/envHelper.ts#L16)
 
 ___
 
@@ -46,7 +59,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:13](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L13)
+[envHelper.ts:13](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/envHelper.ts#L13)
 
 ___
 
@@ -56,7 +69,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:10](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L10)
+[envHelper.ts:10](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/envHelper.ts#L10)
 
 ___
 
@@ -66,7 +79,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L14)
+[envHelper.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/envHelper.ts#L14)
 
 ___
 
@@ -76,7 +89,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L12)
+[envHelper.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/envHelper.ts#L12)
 
 ___
 
@@ -86,7 +99,27 @@ ___
 
 #### Defined in
 
-[envHelper.ts:9](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L9)
+[envHelper.ts:9](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/envHelper.ts#L9)
+
+___
+
+### GCLOUD\_PROJECT
+
+• `Const` **GCLOUD\_PROJECT**: `any` = `process.env.GCLOUD_PROJECT`
+
+#### Defined in
+
+[envHelper.ts:15](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/envHelper.ts#L15)
+
+___
+
+### GOOGLE\_APPLICATION\_CREDENTIALS
+
+• `Const` **GOOGLE\_APPLICATION\_CREDENTIALS**: `any` = `process.env.GOOGLE_APPLICATION_CREDENTIALS`
+
+#### Defined in
+
+[envHelper.ts:17](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/envHelper.ts#L17)
 
 ___
 
@@ -96,7 +129,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L4)
+[envHelper.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/envHelper.ts#L4)
 
 ___
 
@@ -106,7 +139,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L8)
+[envHelper.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/envHelper.ts#L8)
 
 ___
 
@@ -116,7 +149,7 @@ ___
 
 #### Defined in
 
-[envHelper.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L6)
+[envHelper.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/envHelper.ts#L6)
 
 ___
 
@@ -126,4 +159,4 @@ ___
 
 #### Defined in
 
-[envHelper.ts:5](https://github.com/ClassFunc/classfunc-helpers/blob/8924b0b/src/envHelper.ts#L5)
+[envHelper.ts:5](https://github.com/ClassFunc/classfunc-helpers/blob/0bf3f74/src/envHelper.ts#L5)
