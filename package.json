@@ -1,6 +1,6 @@
 {
   "name": "classfunc-helpers",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "ClassFunc Helpers",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

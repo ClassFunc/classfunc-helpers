@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[diffHelper.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/6fed300/src/diffHelper.ts#L11)
+[diffHelper.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/diffHelper.ts#L11)
 
 ## Functions
 
@@ -50,7 +50,7 @@
 
 #### Defined in
 
-[diffHelper.ts:109](https://github.com/ClassFunc/classfunc-helpers/blob/6fed300/src/diffHelper.ts#L109)
+[diffHelper.ts:109](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/diffHelper.ts#L109)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 #### Defined in
 
-[diffHelper.ts:108](https://github.com/ClassFunc/classfunc-helpers/blob/6fed300/src/diffHelper.ts#L108)
+[diffHelper.ts:108](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/diffHelper.ts#L108)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[diffHelper.ts:27](https://github.com/ClassFunc/classfunc-helpers/blob/6fed300/src/diffHelper.ts#L27)
+[diffHelper.ts:27](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/diffHelper.ts#L27)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[diffHelper.ts:51](https://github.com/ClassFunc/classfunc-helpers/blob/6fed300/src/diffHelper.ts#L51)
+[diffHelper.ts:51](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/diffHelper.ts#L51)
 
 ___
 
@@ -136,7 +136,7 @@ ___
 
 #### Defined in
 
-[diffHelper.ts:81](https://github.com/ClassFunc/classfunc-helpers/blob/6fed300/src/diffHelper.ts#L81)
+[diffHelper.ts:81](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/diffHelper.ts#L81)
 
 ___
 
@@ -161,4 +161,4 @@ Return a new after who represent the diff
 
 #### Defined in
 
-[diffHelper.ts:89](https://github.com/ClassFunc/classfunc-helpers/blob/6fed300/src/diffHelper.ts#L89)
+[diffHelper.ts:89](https://github.com/ClassFunc/classfunc-helpers/blob/562dc53/src/diffHelper.ts#L89)
