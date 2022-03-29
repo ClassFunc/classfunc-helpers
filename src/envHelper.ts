@@ -22,8 +22,9 @@ const FIREBASE_CONFIG = process.env.FIREBASE_CONFIG;
 const GOOGLE_APPLICATION_CREDENTIALS = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 
 const getEmulatorsConfig = () => {
-    const firebaseJsonContent = fs.readFileSync(
-        path.join(process.env.PWD, '../', 'firebase.json'), 'utf-8');
+    const pwd = process.env.PWD
+    const functionsRoot = pwd.split('/functions')[0]
+    const firebaseJsonContent = fs.readFileSync(path.join(functionsRoot, 'firebase.json'), 'utf-8');
     return get(toJSON(firebaseJsonContent), 'emulators')
 }
 
