@@ -5,7 +5,8 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc && yarn generate-docs && git add --all && git commit -m 'build'",
+    "build": "tsc",
+    "build:commit": "yarn run build && yarn generate-docs && git add --all && git commit -m 'build'",
     "generate-docs": "typedoc --plugin typedoc-plugin-markdown --readme ./README.md --out docs src/index.ts"
   },
   "keywords": [],
@@ -13,7 +14,6 @@
   "repository": {
     "url": "https://github.com/ClassFunc/classfunc-helpers.git"
   },
-  "type": "module",
   "license": "ISC",
   "dependencies": {
     "deep-diff": "^1.0.2",

@@ -1,8 +1,8 @@
-import {isEqual, isPlainObject, transform} from 'lodash';
+import {isEmpty, isEqual, isPlainObject, transform} from 'lodash';
 
 // @ts-ignore
 import {diff} from 'deep-diff';
-import {toJSONString} from "./jsonHelper";
+import {toJSONString, toObject} from "./jsonHelper";
 
 export type IKind = 'N' | 'D' | 'E' | 'A'
 
@@ -44,10 +44,20 @@ const diffExplain = (before: object, after?: object): string[] => {
     });
 };
 
-const diffObjects = (before: object, after?: object): IDiffObject[] => {
+const diffObjects = (before: any, after?: any, toPlainObject = true): IDiffObject[] => {
     let diffValue = diff(before, after);
-    return JSON.parse(JSON.stringify(diffValue));
+    if (isEmpty(diffValue))
+        return []
+    const mapValues = (values: IDiffObject[]) => {
+        return values.map((o: IDiffObject) => ({
+                ...o,
+                [o.path.join('.')]: {before: o.lhs, after: o.rhs},
+            }),
+        )
+    }
+    return toPlainObject ? toObject(mapValues(diffValue)) : diffValue;
 };
+const diffValues = diffObjects
 
 /**
  * Deep diff between two after, using lodash
@@ -74,8 +84,14 @@ function difference(after: object, before?: object) {
     return changes(after, before);
 }
 
+const diffBeforeAfter = (before: any, after: any) => difference(after, before)
+const diffAfterBefore = (after: any, before: any) => difference(after, before)
+
 export {
     diffExplain,
     diffObjects,
-    difference
+    diffValues,
+    difference,
+    diffBeforeAfter,
+    diffAfterBefore
 }

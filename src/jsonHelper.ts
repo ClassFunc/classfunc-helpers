@@ -5,16 +5,16 @@ import forEach from "lodash/forEach";
 import isPlainObject from 'lodash/isPlainObject';
 import isUndefined from "lodash/isUndefined";
 
-const toJSONString = (objOrString: object | string): string => {
-    return JSON.stringify(objOrString, null, 2);
+const toJSONString = (value: any, format? = true): string => {
+    let fmt = format ? [null, 2] : []
+    if (typeof value === "undefined") {
+        return '{}'
+    }
+    return JSON.stringify(value, ...fmt);
 };
 
-const toObject = (string: any): any => {
-    return JSON.parse(string);
-};
-
-const removeUndefinedDeep = (obj: object): any => {
-    return JSON.parse(JSON.stringify(obj));
+const toObject = (value: any): any => {
+    return JSON.parse(toJSONString(value, false));
 };
 
 const omitByDeep = (obj, shouldOmit) => {
@@ -31,11 +31,17 @@ const omitByDeep = (obj, shouldOmit) => {
 }
 
 const removeUndefined = obj => {
-    return omitByDeep(obj, isUndefined)
+    return toObject(omitByDeep(obj, isUndefined))
 }
 
-const logJSON = (value: any) => {
-    console.log(toJSONString(value))
+const removeUndefinedDeep = (obj): any => {
+    return JSON.parse(JSON.stringify(obj));
+};
+
+const logJSON = (...value: any[]) => {
+    for (const val of value) {
+        console.log(toJSONString(val))
+    }
 }
 
 export {

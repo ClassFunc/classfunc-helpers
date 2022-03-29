@@ -17,13 +17,13 @@
 
 ### logJSON
 
-▸ **logJSON**(`value`): `void`
+▸ **logJSON**(...`value`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `value` | `any` |
+| `...value` | `any`[] |
 
 #### Returns
 
@@ -31,7 +31,7 @@
 
 #### Defined in
 
-[jsonHelper.ts:37](https://github.com/ClassFunc/classfunc-helpers/blob/0a4160e/src/jsonHelper.ts#L37)
+[jsonHelper.ts:41](https://github.com/ClassFunc/classfunc-helpers/blob/c94dca1/src/jsonHelper.ts#L41)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[jsonHelper.ts:20](https://github.com/ClassFunc/classfunc-helpers/blob/0a4160e/src/jsonHelper.ts#L20)
+[jsonHelper.ts:20](https://github.com/ClassFunc/classfunc-helpers/blob/c94dca1/src/jsonHelper.ts#L20)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[jsonHelper.ts:33](https://github.com/ClassFunc/classfunc-helpers/blob/0a4160e/src/jsonHelper.ts#L33)
+[jsonHelper.ts:33](https://github.com/ClassFunc/classfunc-helpers/blob/c94dca1/src/jsonHelper.ts#L33)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `obj` | `object` |
+| `obj` | `any` |
 
 #### Returns
 
@@ -92,19 +92,20 @@ ___
 
 #### Defined in
 
-[jsonHelper.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/0a4160e/src/jsonHelper.ts#L16)
+[jsonHelper.ts:37](https://github.com/ClassFunc/classfunc-helpers/blob/c94dca1/src/jsonHelper.ts#L37)
 
 ___
 
 ### toJSONString
 
-▸ **toJSONString**(`objOrString`): `string`
+▸ **toJSONString**(`value`, `format?`): `string`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `objOrString` | `string` \| `object` |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `value` | `any` | `undefined` |
+| `format?` | `boolean` | `true` |
 
 #### Returns
 
@@ -112,19 +113,19 @@ ___
 
 #### Defined in
 
-[jsonHelper.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/0a4160e/src/jsonHelper.ts#L8)
+[jsonHelper.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/c94dca1/src/jsonHelper.ts#L8)
 
 ___
 
 ### toObject
 
-▸ **toObject**(`string`): `any`
+▸ **toObject**(`value`): `any`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `string` | `any` |
+| `value` | `any` |
 
 #### Returns
 
@@ -132,4 +133,4 @@ ___
 
 #### Defined in
 
-[jsonHelper.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/0a4160e/src/jsonHelper.ts#L12)
+[jsonHelper.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/c94dca1/src/jsonHelper.ts#L16)
