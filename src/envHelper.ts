@@ -1,5 +1,10 @@
 // @ts-nocheck
 
+import fs from "fs";
+import path from "path";
+import {toJSON} from "./jsonHelper";
+import get from "lodash/get";
+
 const ENV = process.env.REACT_APP_ENV || process.env.NODE_ENV
 const IS_DEV = ENV === 'development' || ENV === 'dev'
 const IS_STG = ENV === 'stg' || ENV === 'staging'
@@ -16,6 +21,11 @@ const GCLOUD_PROJECT = process.env.GCLOUD_PROJECT;
 const FIREBASE_CONFIG = process.env.FIREBASE_CONFIG;
 const GOOGLE_APPLICATION_CREDENTIALS = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 
+const getEmulatorsConfig = () => {
+    const firebaseJsonContent = fs.readFileSync(
+        path.join(process.env.PWD, '../', 'firebase.json'), 'utf-8');
+    return get(toJSON(firebaseJsonContent), 'emulators')
+}
 
 export {
     IS_DEV,
@@ -32,5 +42,6 @@ export {
     GCLOUD_PROJECT,
     FIREBASE_CONFIG,
     GOOGLE_APPLICATION_CREDENTIALS,
+    getEmulatorsConfig
 }
 
