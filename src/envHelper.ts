@@ -21,11 +21,16 @@ const GCLOUD_PROJECT = process.env.GCLOUD_PROJECT;
 const FIREBASE_CONFIG = process.env.FIREBASE_CONFIG;
 const GOOGLE_APPLICATION_CREDENTIALS = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 
-const getEmulatorsConfig = () => {
+const getFirebaseConfig = () => {
     const pwd = process.env.PWD
     const functionsRoot = pwd.split('/functions')[0]
     const firebaseJsonContent = fs.readFileSync(path.join(functionsRoot, 'firebase.json'), 'utf-8');
-    return get(toJSON(firebaseJsonContent), 'emulators')
+    const firebaseRcContent = fs.readFileSync(path.join(functionsRoot, '.firebaserc'), 'utf-8');
+    return {...toJSON(firebaseJsonContent), ...toJSON(firebaseRcContent)}
+}
+
+const getEmulatorsConfig = () => {
+    return get(getFirebaseConfig(), 'emulators')
 }
 
 export {
@@ -43,6 +48,7 @@ export {
     GCLOUD_PROJECT,
     FIREBASE_CONFIG,
     GOOGLE_APPLICATION_CREDENTIALS,
-    getEmulatorsConfig
+    getEmulatorsConfig,
+    getFirebaseConfig,
 }
 
