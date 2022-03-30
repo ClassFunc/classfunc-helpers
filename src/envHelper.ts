@@ -21,11 +21,9 @@ const GOOGLE_APPLICATION_CREDENTIALS = process.env.GOOGLE_APPLICATION_CREDENTIAL
 
 const getFirebaseConfig = () => {
     const pwd = process.env.PWD
-    const path = require('path')
-    const fs = require('fs')
     const functionsRoot = pwd.split('/functions')[0]
-    const firebaseJsonContent = fs.readFileSync(path.join(functionsRoot, 'firebase.json'), 'utf-8');
-    const firebaseRcContent = fs.readFileSync(path.join(functionsRoot, '.firebaserc'), 'utf-8');
+    const firebaseJsonContent = eval('require')('fs').readFileSync(eval('require')('path').join(functionsRoot, 'firebase.json'), 'utf-8');
+    const firebaseRcContent = eval('require')('fs').readFileSync(eval('require')('path').join(functionsRoot, '.firebaserc'), 'utf-8');
     return {...toJSON(firebaseJsonContent), ...toJSON(firebaseRcContent)}
 }
 
