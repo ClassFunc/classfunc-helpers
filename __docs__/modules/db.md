@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[db/index.ts:18](https://github.com/ClassFunc/classfunc-helpers/blob/0d49e58/db/index.ts#L18)
+[db/index.ts:18](https://github.com/ClassFunc/classfunc-helpers/blob/f92b8d6/db/index.ts#L18)
 
 ___
 
@@ -52,4 +52,4 @@ ___
 
 #### Defined in
 
-[db/index.ts:71](https://github.com/ClassFunc/classfunc-helpers/blob/0d49e58/db/index.ts#L71)
+[db/index.ts:74](https://github.com/ClassFunc/classfunc-helpers/blob/f92b8d6/db/index.ts#L74)
