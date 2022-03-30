@@ -1,7 +1,5 @@
 // @ts-nocheck
 
-import fs from "fs";
-import path from "path";
 import {toJSON} from "./jsonHelper";
 import get from "lodash/get";
 
@@ -23,6 +21,8 @@ const GOOGLE_APPLICATION_CREDENTIALS = process.env.GOOGLE_APPLICATION_CREDENTIAL
 
 const getFirebaseConfig = () => {
     const pwd = process.env.PWD
+    const path = require('path')
+    const fs = require('fs')
     const functionsRoot = pwd.split('/functions')[0]
     const firebaseJsonContent = fs.readFileSync(path.join(functionsRoot, 'firebase.json'), 'utf-8');
     const firebaseRcContent = fs.readFileSync(path.join(functionsRoot, '.firebaserc'), 'utf-8');
