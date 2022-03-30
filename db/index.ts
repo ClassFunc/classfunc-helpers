@@ -47,7 +47,6 @@ const batchUpdateAsync = async (db: object,
                                 collectionPath: string,
                                 idField: ((value: any) => string) | string,
                                 updateObject?: ((value: any) => object),
-                                setOptions? = {merge: true},
                                 size? = 500,
 ) => {
     const batchPromises = chunk(values, size)
@@ -63,10 +62,9 @@ const batchUpdateAsync = async (db: object,
                     ? idField(doc)
                     : doc[idField]
                 // set
-                batch.set(
+                batch.update(
                     db.collection(collectionPath).doc(docPath),
-                    toJSON(value),
-                    setOptions
+                    toJSON(value)
                 )
             })
             batch.commit()

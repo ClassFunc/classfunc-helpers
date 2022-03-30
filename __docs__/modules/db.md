@@ -34,13 +34,13 @@
 
 #### Defined in
 
-[db/index.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/db/index.ts#L7)
+[db/index.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/db/index.ts#L7)
 
 ___
 
 ### batchUpdateAsync
 
-▸ **batchUpdateAsync**(`db`, `values`, `collectionPath`, `idField`, `updateObject?`, `setOptions?`, `size?`): `Promise`<`unknown`[]\>
+▸ **batchUpdateAsync**(`db`, `values`, `collectionPath`, `idField`, `updateObject?`, `size?`): `Promise`<`unknown`[]\>
 
 #### Parameters
 
@@ -51,8 +51,6 @@ ___
 | `collectionPath` | `string` | `undefined` |
 | `idField` | `string` \| (`value`: `any`) => `string` | `undefined` |
 | `updateObject?` | (`value`: `any`) => `object` | `undefined` |
-| `setOptions?` | `Object` | `undefined` |
-| `setOptions.merge` | `boolean` | `true` |
 | `size?` | `number` | `500` |
 
 #### Returns
@@ -61,4 +59,4 @@ ___
 
 #### Defined in
 
-[db/index.ts:45](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/db/index.ts#L45)
+[db/index.ts:45](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/db/index.ts#L45)

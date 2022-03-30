@@ -35,7 +35,7 @@
 
 #### Defined in
 
-[env/index.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L6)
+[env/index.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L6)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L14)
+[env/index.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L14)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:19](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L19)
+[env/index.ts:19](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L19)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L16)
+[env/index.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L16)
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:13](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L13)
+[env/index.ts:13](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L13)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:17](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L17)
+[env/index.ts:17](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L17)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:15](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L15)
+[env/index.ts:15](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L15)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L12)
+[env/index.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L12)
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:18](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L18)
+[env/index.ts:18](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L18)
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:20](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L20)
+[env/index.ts:20](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L20)
 
 ___
 
@@ -135,7 +135,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L7)
+[env/index.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L7)
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L11)
+[env/index.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L11)
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:9](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L9)
+[env/index.ts:9](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L9)
 
 ___
 
@@ -165,7 +165,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L8)
+[env/index.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L8)
 
 ## Functions
 
@@ -179,7 +179,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:30](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L30)
+[env/index.ts:30](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L30)
 
 ___
 
@@ -193,13 +193,19 @@ ___
 
 #### Defined in
 
-[env/index.ts:22](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L22)
+[env/index.ts:22](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L22)
 
 ___
 
 ### setFirebaseEmulators
 
-▸ **setFirebaseEmulators**(): `void`
+▸ **setFirebaseEmulators**(`info`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `info` | `boolean` |
 
 #### Returns
 
@@ -207,4 +213,4 @@ ___
 
 #### Defined in
 
-[env/index.ts:34](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/env/index.ts#L34)
+[env/index.ts:34](https://github.com/ClassFunc/classfunc-helpers/blob/6abb726/env/index.ts#L34)

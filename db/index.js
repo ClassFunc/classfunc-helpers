@@ -46,7 +46,7 @@ const batchSetAsync = (db, values, collectionPath, idField, setObject, setOption
     return yield Promise.all(batchPromises);
 });
 exports.batchSetAsync = batchSetAsync;
-const batchUpdateAsync = (db, values, collectionPath, idField, updateObject, setOptions = { merge: true }, size = 500) => __awaiter(void 0, void 0, void 0, function* () {
+const batchUpdateAsync = (db, values, collectionPath, idField, updateObject, size = 500) => __awaiter(void 0, void 0, void 0, function* () {
     const batchPromises = (0, chunk_1.default)(values, size)
         .map((ck) => __awaiter(void 0, void 0, void 0, function* () {
         return new Promise((resolve, reject) => {
@@ -61,7 +61,7 @@ const batchUpdateAsync = (db, values, collectionPath, idField, updateObject, set
                     ? idField(doc)
                     : doc[idField];
                 // set
-                batch.set(db.collection(collectionPath).doc(docPath), (0, json_1.toJSON)(value), setOptions);
+                batch.update(db.collection(collectionPath).doc(docPath), (0, json_1.toJSON)(value));
             });
             batch.commit()
                 .then((results) => {

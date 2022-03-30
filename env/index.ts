@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import {toJSON} from "../json";
+import {logJSON, toJSON} from "../json";
 import get from "lodash/get";
 
 const ENV = process.env.REACT_APP_ENV || process.env.NODE_ENV
@@ -31,7 +31,7 @@ const getEmulatorsConfig = () => {
     return get(getFirebaseConfig(), 'emulators')
 }
 
-const setFirebaseEmulators = () => {
+const setFirebaseEmulators = (info: boolean) => {
     const fConfig = getFirebaseConfig()
     process.env.GCLOUD_PROJECT = get(fConfig, 'projects.default')
 
@@ -46,6 +46,10 @@ const setFirebaseEmulators = () => {
         process.env.FIRESTORE_EMULATOR_HOST = localhost(firestorePort)
     if (storagePort)
         process.env.FIREBASE_STORAGE_EMULATOR_HOST = localhost(storagePort)
+
+    if (info) {
+        logJSON(fConfig)
+    }
 }
 
 export {
