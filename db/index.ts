@@ -50,9 +50,9 @@ const batchSetAsync = async ({
             })
             batch.commit()
                 .then((results: any[]) => {
-                    resolve(results)
                     if (log)
-                        logJSON('-- set success -- ', docRef.path, value)
+                        logJSON('-- set success --')
+                    resolve(results)
                 })
                 .catch((e: any) => {
                     reject(e)
@@ -94,15 +94,18 @@ const batchUpdateAsync = async ({
                     ? idField(doc)
                     : doc[idField]
                 // set
+                const docRef = db.collection(collectionPath).doc(docPath)
                 if (log)
-                    logJSON('-- update -- ', `${collectionPath}/${docPath}`, value)
+                    logJSON('-- update -- ', docRef.path, value)
                 batch.update(
-                    db.collection(collectionPath).doc(docPath),
+                    docRef,
                     toJSON(value)
                 )
             })
             batch.commit()
                 .then((results: any[]) => {
+                    if (log)
+                        logJSON('-- update success --')
                     resolve(results)
                 })
                 .catch((e: any) => {
