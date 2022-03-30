@@ -31,7 +31,7 @@ const getEmulatorsConfig = () => {
     return get(getFirebaseConfig(), 'emulators')
 }
 
-const setFirebaseEmulators = (info: boolean) => {
+const setFirebaseEmulators = (info?: boolean) => {
     const fConfig = getFirebaseConfig()
     process.env.GCLOUD_PROJECT = get(fConfig, 'projects.default')
 
