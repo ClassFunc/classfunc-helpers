@@ -33,4 +33,4 @@
 
 #### Defined in
 
-[dbHelper.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/54c3f24/src/dbHelper.ts#L11)
+[db/index.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/64bbc90/db/dbHelper.ts#L11)

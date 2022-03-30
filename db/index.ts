@@ -2,11 +2,7 @@
 
 import chunk from "lodash/chunk";
 import isFunction from "lodash/isFunction";
-import {toJSON} from "./jsonHelper";
-
-export {
-    batchSetAsync
-}
+import {toJSON} from "../json";
 
 const batchSetAsync = async (db: object,
                              values: any[],
@@ -44,4 +40,8 @@ const batchSetAsync = async (db: object,
                 })
         }))
     return await Promise.all(batchPromises)
+}
+
+export {
+    batchSetAsync
 }

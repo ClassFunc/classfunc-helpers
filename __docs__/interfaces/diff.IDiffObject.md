@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[diffHelper.ts:21](https://github.com/ClassFunc/classfunc-helpers/blob/54c3f24/src/diffHelper.ts#L21)
+[diff/index.ts:21](https://github.com/ClassFunc/classfunc-helpers/blob/64bbc90/diff/diffHelper.ts#L21)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[diffHelper.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/54c3f24/src/diffHelper.ts#L14)
+[diff/index.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/64bbc90/diff/diffHelper.ts#L14)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 #### Defined in
 
-[diffHelper.ts:19](https://github.com/ClassFunc/classfunc-helpers/blob/54c3f24/src/diffHelper.ts#L19)
+[diff/index.ts:19](https://github.com/ClassFunc/classfunc-helpers/blob/64bbc90/diff/diffHelper.ts#L19)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 #### Defined in
 
-[diffHelper.ts:22](https://github.com/ClassFunc/classfunc-helpers/blob/54c3f24/src/diffHelper.ts#L22)
+[diff/index.ts:22](https://github.com/ClassFunc/classfunc-helpers/blob/64bbc90/diff/diffHelper.ts#L22)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 #### Defined in
 
-[diffHelper.ts:20](https://github.com/ClassFunc/classfunc-helpers/blob/54c3f24/src/diffHelper.ts#L20)
+[diff/index.ts:20](https://github.com/ClassFunc/classfunc-helpers/blob/64bbc90/diff/diffHelper.ts#L20)
 
 ___
 
@@ -81,4 +81,4 @@ ___
 
 #### Defined in
 
-[diffHelper.ts:23](https://github.com/ClassFunc/classfunc-helpers/blob/54c3f24/src/diffHelper.ts#L23)
+[diff/index.ts:23](https://github.com/ClassFunc/classfunc-helpers/blob/64bbc90/diff/diffHelper.ts#L23)

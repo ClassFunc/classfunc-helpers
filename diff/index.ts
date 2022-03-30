@@ -1,8 +1,13 @@
 // @ts-nocheck
 
-import {isEmpty, isEqual, isPlainObject, set, transform, uniq} from 'lodash';
+import isEmpty from 'lodash/isEmpty'
+import isEqual from 'lodash/isEqual'
+import isPlainObject from 'lodash/isPlainObject'
+import set from 'lodash/set'
+import transform from 'lodash/transform'
+import uniq from 'lodash/uniq'
 import {diff} from 'deep-diff';
-import {toJSONString, toObject} from "./jsonHelper";
+import {toJSONString, toObject} from "../json";
 import get from "lodash/get";
 import groupBy from "lodash/groupBy";
 import compact from "lodash/compact";

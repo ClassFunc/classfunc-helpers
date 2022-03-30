@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import {toJSON} from "./jsonHelper";
+import {toJSON} from "../json";
 import get from "lodash/get";
 
 const ENV = process.env.REACT_APP_ENV || process.env.NODE_ENV

@@ -2,12 +2,14 @@
   "name": "classfunc-helpers",
   "version": "1.0.32",
   "description": "ClassFunc Helpers",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "build": "tsc",
+    "build:esm": "tsc --module es2015 --target es5 --outDir __dist/esm",
+    "build:cjs": "tsc --module commonjs --target es5 --outDir __dist/cjs",
     "build:commit": "yarn run build && yarn generate-docs && git add --all && git commit -m 'build'",
-    "generate-docs": "typedoc --plugin typedoc-plugin-markdown --readme ./README.md --out docs src/index.ts"
+    "generate-docs": "typedoc --plugin typedoc-plugin-markdown --readme ./README.md --out __docs__ index.ts"
   },
   "keywords": [],
   "author": "ClassFunc Softwares JSC",
