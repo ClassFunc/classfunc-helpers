@@ -13,19 +13,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.batchSetAsync = void 0;
+exports.batchUpdateAsync = exports.batchSetAsync = void 0;
 const chunk_1 = __importDefault(require("lodash/chunk"));
 const isFunction_1 = __importDefault(require("lodash/isFunction"));
 const json_1 = require("../json");
-const batchSetAsync = (db, values, collectionPath, idField, setValue, setOptions = { merge: true }, size = 500) => __awaiter(void 0, void 0, void 0, function* () {
+const batchSetAsync = (db, values, collectionPath, idField, setObject, setOptions = { merge: true }, size = 500) => __awaiter(void 0, void 0, void 0, function* () {
     const batchPromises = (0, chunk_1.default)(values, size)
         .map((ck) => __awaiter(void 0, void 0, void 0, function* () {
         return new Promise((resolve, reject) => {
             const batch = db.batch();
             ck.forEach(doc => {
                 let value;
-                if ((0, isFunction_1.default)(setValue))
-                    value = setValue(doc);
+                if ((0, isFunction_1.default)(setObject))
+                    value = setObject(doc);
                 if (!value)
                     value = doc;
                 const docPath = (0, isFunction_1.default)(idField)
@@ -46,3 +46,32 @@ const batchSetAsync = (db, values, collectionPath, idField, setValue, setOptions
     return yield Promise.all(batchPromises);
 });
 exports.batchSetAsync = batchSetAsync;
+const batchUpdateAsync = (db, values, collectionPath, idField, updateObject, setOptions = { merge: true }, size = 500) => __awaiter(void 0, void 0, void 0, function* () {
+    const batchPromises = (0, chunk_1.default)(values, size)
+        .map((ck) => __awaiter(void 0, void 0, void 0, function* () {
+        return new Promise((resolve, reject) => {
+            const batch = db.batch();
+            ck.forEach(doc => {
+                let value;
+                if ((0, isFunction_1.default)(updateObject))
+                    value = updateObject(doc);
+                if (!value)
+                    value = doc;
+                const docPath = (0, isFunction_1.default)(idField)
+                    ? idField(doc)
+                    : doc[idField];
+                // set
+                batch.set(db.collection(collectionPath).doc(docPath), (0, json_1.toJSON)(value), setOptions);
+            });
+            batch.commit()
+                .then((results) => {
+                resolve(results);
+            })
+                .catch((e) => {
+                reject(e);
+            });
+        });
+    }));
+    return yield Promise.all(batchPromises);
+});
+exports.batchUpdateAsync = batchUpdateAsync;

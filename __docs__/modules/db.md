@@ -7,12 +7,13 @@
 ### Functions
 
 - [batchSetAsync](db.md#batchsetasync)
+- [batchUpdateAsync](db.md#batchupdateasync)
 
 ## Functions
 
 ### batchSetAsync
 
-▸ **batchSetAsync**(`db`, `values`, `collectionPath`, `idField`, `setValue?`, `setOptions?`, `size?`): `Promise`<`unknown`[]\>
+▸ **batchSetAsync**(`db`, `values`, `collectionPath`, `idField`, `setObject?`, `setOptions?`, `size?`): `Promise`<`unknown`[]\>
 
 #### Parameters
 
@@ -22,7 +23,7 @@
 | `values` | `any`[] | `undefined` |
 | `collectionPath` | `string` | `undefined` |
 | `idField` | `string` \| (`value`: `any`) => `string` | `undefined` |
-| `setValue?` | (`value`: `any`) => `object` | `undefined` |
+| `setObject?` | (`value`: `any`) => `object` | `undefined` |
 | `setOptions?` | `Object` | `undefined` |
 | `setOptions.merge` | `boolean` | `true` |
 | `size?` | `number` | `500` |
@@ -33,4 +34,31 @@
 
 #### Defined in
 
-[db/index.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/64bbc90/db/dbHelper.ts#L11)
+[db/index.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/db/index.ts#L7)
+
+___
+
+### batchUpdateAsync
+
+▸ **batchUpdateAsync**(`db`, `values`, `collectionPath`, `idField`, `updateObject?`, `setOptions?`, `size?`): `Promise`<`unknown`[]\>
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `db` | `object` | `undefined` |
+| `values` | `any`[] | `undefined` |
+| `collectionPath` | `string` | `undefined` |
+| `idField` | `string` \| (`value`: `any`) => `string` | `undefined` |
+| `updateObject?` | (`value`: `any`) => `object` | `undefined` |
+| `setOptions?` | `Object` | `undefined` |
+| `setOptions.merge` | `boolean` | `true` |
+| `size?` | `number` | `500` |
+
+#### Returns
+
+`Promise`<`unknown`[]\>
+
+#### Defined in
+
+[db/index.ts:45](https://github.com/ClassFunc/classfunc-helpers/blob/93d1854/db/index.ts#L45)
