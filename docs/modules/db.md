@@ -12,7 +12,7 @@
 
 ### batchSetAsync
 
-▸ **batchSetAsync**(`db`, `values`, `collectionPath`, `docIdField`, `setValueFunc`, `setOptions?`, `size?`): `Promise`<`unknown`[]\>
+▸ **batchSetAsync**(`db`, `values`, `collectionPath`, `idField`, `setValue?`, `setOptions?`, `size?`): `Promise`<`unknown`[]\>
 
 #### Parameters
 
@@ -21,10 +21,11 @@
 | `db` | `object` | `undefined` |
 | `values` | `any`[] | `undefined` |
 | `collectionPath` | `string` | `undefined` |
-| `docIdField` | `string` \| `Function` | `undefined` |
-| `setValueFunc` | `undefined` \| ``null`` \| `Function` | `undefined` |
-| `setOptions` | `object` | `undefined` |
-| `size` | `number` | `500` |
+| `idField` | `string` \| (`value`: `any`) => `string` | `undefined` |
+| `setValue?` | (`value`: `any`) => `object` | `undefined` |
+| `setOptions?` | `Object` | `undefined` |
+| `setOptions.merge` | `boolean` | `true` |
+| `size?` | `number` | `500` |
 
 #### Returns
 
@@ -32,4 +33,4 @@
 
 #### Defined in
 
-[dbHelper.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/89cfff2/src/dbHelper.ts#L7)
+[dbHelper.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/866ff47/src/dbHelper.ts#L11)

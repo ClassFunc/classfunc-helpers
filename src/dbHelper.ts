@@ -4,28 +4,32 @@ import chunk from "lodash/chunk";
 import isFunction from "lodash/isFunction";
 import {toJSON} from "./jsonHelper";
 
+export {
+    batchSetAsync
+}
+
 const batchSetAsync = async (db: object,
                              values: any[],
                              collectionPath: string,
-                             docIdField: string | Function,
-                             setValueFunc: Function | null | undefined,
-                             setOptions: object = {merge: true},
-                             size: number = 500,
+                             idField: ((value: any) => string) | string,
+                             setValue?: ((value: any) => object),
+                             setOptions? = {merge: true},
+                             size? = 500,
 ) => {
     const batchPromises = chunk(values, size)
         .map(async ck => new Promise((resolve, reject) => {
             const batch = db.batch()
             ck.forEach(doc => {
-                const data = isFunction(setValueFunc)
-                    ? setValueFunc(doc)
+                const value = isFunction(setValue)
+                    ? setValue(doc)
                     : doc
-                const docPath = isFunction(docIdField)
-                    ? docIdField(doc)
-                    : doc[docIdField]
+                const docPath = isFunction(idField)
+                    ? idField(doc)
+                    : doc[idField]
                 // set
                 batch.set(
                     db.collection(collectionPath).doc(docPath),
-                    toJSON(data),
+                    toJSON(value),
                     setOptions
                 )
             })
@@ -38,8 +42,4 @@ const batchSetAsync = async (db: object,
                 })
         }))
     return await Promise.all(batchPromises)
-}
-
-export {
-    batchSetAsync
 }
