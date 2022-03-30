@@ -17,7 +17,7 @@ exports.batchUpdateAsync = exports.batchSetAsync = void 0;
 const chunk_1 = __importDefault(require("lodash/chunk"));
 const isFunction_1 = __importDefault(require("lodash/isFunction"));
 const json_1 = require("../json");
-const batchSetAsync = (db, values, collectionPath, idField, setObject, setOptions = { merge: true }, size = 500) => __awaiter(void 0, void 0, void 0, function* () {
+const batchSetAsync = ({ db, values, collectionPath, idField, setObject, setOptions = { merge: true }, size = 500, log = true }) => __awaiter(void 0, void 0, void 0, function* () {
     const batchPromises = (0, chunk_1.default)(values, size)
         .map((ck) => __awaiter(void 0, void 0, void 0, function* () {
         return new Promise((resolve, reject) => {
@@ -32,6 +32,8 @@ const batchSetAsync = (db, values, collectionPath, idField, setObject, setOption
                     ? idField(doc)
                     : doc[idField];
                 // set
+                if (log)
+                    (0, json_1.logJSON)('-- set -- ', `${collectionPath}/${docPath}`, value);
                 batch.set(db.collection(collectionPath).doc(docPath), (0, json_1.toJSON)(value), setOptions);
             });
             batch.commit()
@@ -46,7 +48,7 @@ const batchSetAsync = (db, values, collectionPath, idField, setObject, setOption
     return yield Promise.all(batchPromises);
 });
 exports.batchSetAsync = batchSetAsync;
-const batchUpdateAsync = (db, values, collectionPath, idField, updateObject, size = 500) => __awaiter(void 0, void 0, void 0, function* () {
+const batchUpdateAsync = ({ db, values, collectionPath, idField, updateObject, size = 500, log = true }) => __awaiter(void 0, void 0, void 0, function* () {
     const batchPromises = (0, chunk_1.default)(values, size)
         .map((ck) => __awaiter(void 0, void 0, void 0, function* () {
         return new Promise((resolve, reject) => {
@@ -61,6 +63,8 @@ const batchUpdateAsync = (db, values, collectionPath, idField, updateObject, siz
                     ? idField(doc)
                     : doc[idField];
                 // set
+                if (log)
+                    (0, json_1.logJSON)('-- update -- ', `${collectionPath}/${docPath}`, value);
                 batch.update(db.collection(collectionPath).doc(docPath), (0, json_1.toJSON)(value));
             });
             batch.commit()

@@ -4,6 +4,11 @@
 
 ## Table of contents
 
+### Interfaces
+
+- [BatchSetAsyncParams](../interfaces/db.BatchSetAsyncParams.md)
+- [BatchUpdateAsyncParams](../interfaces/db.BatchUpdateAsyncParams.md)
+
 ### Functions
 
 - [batchSetAsync](db.md#batchsetasync)
@@ -13,20 +18,13 @@
 
 ### batchSetAsync
 
-▸ **batchSetAsync**(`db`, `values`, `collectionPath`, `idField`, `setObject?`, `setOptions?`, `size?`): `Promise`<`unknown`[]\>
+▸ **batchSetAsync**(`__namedParameters`): `Promise`<`unknown`[]\>
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `db` | `object` | `undefined` |
-| `values` | `any`[] | `undefined` |
-| `collectionPath` | `string` | `undefined` |
-| `idField` | `string` \| (`value`: `any`) => `string` | `undefined` |
-| `setObject?` | (`value`: `any`) => `object` | `undefined` |
-| `setOptions?` | `Object` | `undefined` |
-| `setOptions.merge` | `boolean` | `true` |
-| `size?` | `number` | `500` |
+| Name | Type |
+| :------ | :------ |
+| `__namedParameters` | [`BatchSetAsyncParams`](../interfaces/db.BatchSetAsyncParams.md) |
 
 #### Returns
 
@@ -34,24 +32,19 @@
 
 #### Defined in
 
-[db/index.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/e38191f/db/index.ts#L7)
+[db/index.ts:18](https://github.com/ClassFunc/classfunc-helpers/blob/0d49e58/db/index.ts#L18)
 
 ___
 
 ### batchUpdateAsync
 
-▸ **batchUpdateAsync**(`db`, `values`, `collectionPath`, `idField`, `updateObject?`, `size?`): `Promise`<`unknown`[]\>
+▸ **batchUpdateAsync**(`__namedParameters`): `Promise`<`unknown`[]\>
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `db` | `object` | `undefined` |
-| `values` | `any`[] | `undefined` |
-| `collectionPath` | `string` | `undefined` |
-| `idField` | `string` \| (`value`: `any`) => `string` | `undefined` |
-| `updateObject?` | (`value`: `any`) => `object` | `undefined` |
-| `size?` | `number` | `500` |
+| Name | Type |
+| :------ | :------ |
+| `__namedParameters` | [`BatchUpdateAsyncParams`](../interfaces/db.BatchUpdateAsyncParams.md) |
 
 #### Returns
 
@@ -59,4 +52,4 @@ ___
 
 #### Defined in
 
-[db/index.ts:45](https://github.com/ClassFunc/classfunc-helpers/blob/e38191f/db/index.ts#L45)
+[db/index.ts:71](https://github.com/ClassFunc/classfunc-helpers/blob/0d49e58/db/index.ts#L71)
