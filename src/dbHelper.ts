@@ -20,9 +20,11 @@ const batchSetAsync = async (db: object,
         .map(async ck => new Promise((resolve, reject) => {
             const batch = db.batch()
             ck.forEach(doc => {
-                const value = isFunction(setValue)
-                    ? setValue(doc)
-                    : doc
+                let value
+                if (isFunction(setValue))
+                    value = setValue(doc)
+                if (!value)
+                    value = doc
                 const docPath = isFunction(idField)
                     ? idField(doc)
                     : doc[idField]
