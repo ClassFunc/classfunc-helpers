@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[json/index.ts:44](https://github.com/ClassFunc/classfunc-helpers/blob/ee038f8/json/index.ts#L44)
+[json/index.ts:44](https://github.com/ClassFunc/classfunc-helpers/blob/9b25d60/json/index.ts#L44)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[json/index.ts:23](https://github.com/ClassFunc/classfunc-helpers/blob/ee038f8/json/index.ts#L23)
+[json/index.ts:23](https://github.com/ClassFunc/classfunc-helpers/blob/9b25d60/json/index.ts#L23)
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 #### Defined in
 
-[json/index.ts:36](https://github.com/ClassFunc/classfunc-helpers/blob/ee038f8/json/index.ts#L36)
+[json/index.ts:36](https://github.com/ClassFunc/classfunc-helpers/blob/9b25d60/json/index.ts#L36)
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[json/index.ts:40](https://github.com/ClassFunc/classfunc-helpers/blob/ee038f8/json/index.ts#L40)
+[json/index.ts:40](https://github.com/ClassFunc/classfunc-helpers/blob/9b25d60/json/index.ts#L40)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-[json/index.ts:21](https://github.com/ClassFunc/classfunc-helpers/blob/ee038f8/json/index.ts#L21)
+[json/index.ts:21](https://github.com/ClassFunc/classfunc-helpers/blob/9b25d60/json/index.ts#L21)
 
 ___
 
@@ -134,7 +134,7 @@ ___
 
 #### Defined in
 
-[json/index.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/ee038f8/json/index.ts#L8)
+[json/index.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/9b25d60/json/index.ts#L8)
 
 ___
 
@@ -154,4 +154,4 @@ ___
 
 #### Defined in
 
-[json/index.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/ee038f8/json/index.ts#L16)
+[json/index.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/9b25d60/json/index.ts#L16)

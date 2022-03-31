@@ -1,130 +1,88 @@
-var __create = Object.create;
-var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var __getOwnPropNames = Object.getOwnPropertyNames;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __getProtoOf = Object.getPrototypeOf;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-var __export = (target, all) => {
-  for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
-};
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target, mod));
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
-var diff_exports = {};
-__export(diff_exports, {
-  diffAfterBefore: () => diffAfterBefore,
-  diffBeforeAfter: () => diffBeforeAfter,
-  diffExplain: () => diffExplain,
-  diffObjects: () => diffObjects,
-  diffValues: () => diffValues,
-  difference: () => difference
-});
-module.exports = __toCommonJS(diff_exports);
-var import_isEmpty = __toESM(require("lodash/isEmpty"));
-var import_isEqual = __toESM(require("lodash/isEqual"));
-var import_isPlainObject = __toESM(require("lodash/isPlainObject"));
-var import_set = __toESM(require("lodash/set"));
-var import_transform = __toESM(require("lodash/transform"));
-var import_uniq = __toESM(require("lodash/uniq"));
-var import_deep_diff = require("deep-diff");
-var import_json = require("../json");
-var import_get = __toESM(require("lodash/get"));
-var import_groupBy = __toESM(require("lodash/groupBy"));
-var import_compact = __toESM(require("lodash/compact"));
-var import_flattenDeep = __toESM(require("lodash/flattenDeep"));
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.diffAfterBefore = exports.diffBeforeAfter = exports.difference = exports.diffValues = exports.diffObjects = exports.diffExplain = void 0;
+const isEmpty_1 = __importDefault(require("lodash/isEmpty"));
+const isEqual_1 = __importDefault(require("lodash/isEqual"));
+const isPlainObject_1 = __importDefault(require("lodash/isPlainObject"));
+const set_1 = __importDefault(require("lodash/set"));
+const transform_1 = __importDefault(require("lodash/transform"));
+const uniq_1 = __importDefault(require("lodash/uniq"));
+const deep_diff_1 = require("deep-diff");
+const json_1 = require("../json");
+const get_1 = __importDefault(require("lodash/get"));
+const groupBy_1 = __importDefault(require("lodash/groupBy"));
+const compact_1 = __importDefault(require("lodash/compact"));
+const flattenDeep_1 = __importDefault(require("lodash/flattenDeep"));
 const diffExplain = (before, after) => {
-  let diffArr = diffObjects(before, after);
-  const explain = {
-    "N": "added",
-    "D": "deleted",
-    "E": "edited",
-    "A": "array"
-  };
-  return diffArr.map((diffObj) => {
-    var _a;
-    const item = diffObj.item;
-    const itemKind = item == null ? void 0 : item.kind;
-    let kindExplain = "";
-    if (itemKind) {
-      kindExplain = explain[item.kind];
-    }
-    return `${explain[diffObj.kind]} ${(0, import_json.toJSONString)((_a = diffObj.path) == null ? void 0 : _a.join("."))} ${diffObj.index > -1 ? `at ${diffObj.index}` : ""} ${itemKind ? `${(0, import_json.toJSONString)(kindExplain)} ${itemKind === "N" ? (0, import_json.toJSONString)(item.rhs) : (0, import_json.toJSONString)(item.lhs)}` : `${(0, import_json.toJSONString)(diffObj.lhs)} -> ${(0, import_json.toJSONString)(diffObj.rhs)}`}`;
-  });
+    let diffArr = diffObjects(before, after);
+    const explain = {
+        'N': 'added',
+        'D': 'deleted',
+        'E': 'edited',
+        'A': 'array',
+    };
+    return diffArr.map((diffObj) => {
+        var _a;
+        const item = diffObj.item;
+        const itemKind = item === null || item === void 0 ? void 0 : item.kind;
+        let kindExplain = '';
+        if (itemKind) {
+            kindExplain = explain[item.kind];
+        }
+        return `${explain[diffObj.kind]} ${(0, json_1.toJSONString)((_a = diffObj.path) === null || _a === void 0 ? void 0 : _a.join('.'))} ${diffObj.index > -1
+            ? `at ${diffObj.index}`
+            : ''} ${itemKind ? `${(0, json_1.toJSONString)(kindExplain)} ${itemKind === 'N' ? (0, json_1.toJSONString)(item.rhs) : (0, json_1.toJSONString)(item.lhs)}` : `${(0, json_1.toJSONString)(diffObj.lhs)} -> ${(0, json_1.toJSONString)(diffObj.rhs)}`}`;
+    });
 };
+exports.diffExplain = diffExplain;
 const diffObjects = (before, after, identities) => {
-  let diffValue = (0, import_deep_diff.diff)(before, after);
-  if ((0, import_isEmpty.default)(diffValue))
-    return [];
-  const mapValues = (values) => {
-    const ret = values.map((o) => {
-      return __spreadProps(__spreadValues({}, (0, import_set.default)(o, o.path.join("."), { before: o.lhs, after: o.rhs })), {
-        path: [...o.path, o.path.join(".")]
-      });
-    });
-    identities = identities != null ? identities : (0, import_uniq.default)(ret.map((r) => r.path[0]));
-    return mapIdentities(ret, identities);
-  };
-  const mapIdentities = (values, ids) => {
-    const val = values.map((d) => {
-      return (!Array.isArray(ids) ? [ids] : ids).map((id) => {
-        const path = (0, import_get.default)(d, "path");
-        if (!path.includes(id))
-          return;
-        const changes = (0, import_get.default)(d, id);
-        if (changes)
-          return __spreadProps(__spreadValues({}, changes), { __identity__: id });
-      });
-    });
-    return (0, import_groupBy.default)((0, import_compact.default)((0, import_flattenDeep.default)(val)), "__identity__");
-  };
-  return (0, import_json.toObject)(mapValues(diffValue));
+    let diffValue = (0, deep_diff_1.diff)(before, after);
+    if ((0, isEmpty_1.default)(diffValue))
+        return [];
+    const mapValues = (values) => {
+        const ret = values.map((o) => {
+            return (Object.assign(Object.assign({}, (0, set_1.default)(o, o.path.join('.'), { before: o.lhs, after: o.rhs })), { path: [...o.path, o.path.join('.')] }));
+        });
+        identities = identities !== null && identities !== void 0 ? identities : (0, uniq_1.default)(ret.map(r => r.path[0]));
+        return mapIdentities(ret, identities);
+    };
+    const mapIdentities = (values, ids) => {
+        const val = values.map(d => {
+            return (!Array.isArray(ids) ? [ids] : ids).map(id => {
+                const path = (0, get_1.default)(d, 'path');
+                if (!path.includes(id))
+                    return;
+                const changes = (0, get_1.default)(d, id);
+                if (changes)
+                    return Object.assign(Object.assign({}, changes), { __identity__: id });
+            });
+        });
+        return (0, groupBy_1.default)((0, compact_1.default)((0, flattenDeep_1.default)(val)), '__identity__');
+    };
+    return (0, json_1.toObject)(mapValues(diffValue));
 };
+exports.diffObjects = diffObjects;
 const diffValues = diffObjects;
+exports.diffValues = diffValues;
 function difference(after, before) {
-  if (!before)
-    return after;
-  function changes(object, base) {
-    return (0, import_transform.default)(object, function(result, value, key) {
-      if (!(0, import_isEqual.default)(value, base[key])) {
-        result[key] = (0, import_isPlainObject.default)(value) && (0, import_isPlainObject.default)(base[key]) ? changes(value, base[key]) : value;
-      }
-    });
-  }
-  return changes(after, before);
+    if (!before)
+        return after;
+    function changes(object, base) {
+        return (0, transform_1.default)(object, function (result, value, key) {
+            if (!(0, isEqual_1.default)(value, base[key])) {
+                result[key] = ((0, isPlainObject_1.default)(value) && (0, isPlainObject_1.default)(base[key]))
+                    ? changes(value, base[key])
+                    : value;
+            }
+        });
+    }
+    return changes(after, before);
 }
+exports.difference = difference;
 const diffBeforeAfter = (before, after) => difference(after, before);
+exports.diffBeforeAfter = diffBeforeAfter;
 const diffAfterBefore = (after, before) => difference(after, before);
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  diffAfterBefore,
-  diffBeforeAfter,
-  diffExplain,
-  diffObjects,
-  diffValues,
-  difference
-});
+exports.diffAfterBefore = diffAfterBefore;
