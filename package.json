@@ -1,13 +1,13 @@
 {
   "name": "classfunc-helpers",
-  "version": "2.0.16",
+  "version": "2.0.17",
   "description": "ClassFunc Helpers",
   "main": "./index.js",
   "types": "./index.d.ts",
   "scripts": {
     "build": "node esbuild.cjs",
     "build:ts": "tsc",
-    "build:commit": "yarn run build:ts && yarn generate-docs && git add --all && git commit -m 'build'",
+    "build:ts:commit": "yarn run build:ts && yarn generate-docs && git add --all && git commit -m 'build'",
     "generate-docs": "typedoc --plugin typedoc-plugin-markdown --readme ./README.md --out __docs__ index.ts"
   },
   "files": [
@@ -31,19 +31,19 @@
       "types": "./json/index.d.js"
     },
     "./env": {
-      "require": "./json/index.js",
-      "default": "./json/index.js",
-      "types": "./json/index.d.js"
+      "require": "./env/index.js",
+      "default": "./env/index.js",
+      "types": "./env/index.d.js"
     },
     "./diff": {
-      "require": "./json/index.js",
-      "default": "./json/index.js",
-      "types": "./json/index.d.js"
+      "require": "./diff/index.js",
+      "default": "./diff/index.js",
+      "types": "./diff/index.d.js"
     },
     "./db": {
-      "require": "./json/index.js",
-      "default": "./json/index.js",
-      "types": "./json/index.d.js"
+      "require": "./db/index.js",
+      "default": "./db/index.js",
+      "types": "./db/index.d.js"
     },
     "./package.json": "./package.json",
     "./index.d.ts": "./index.d.ts"
