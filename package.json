@@ -1,11 +1,12 @@
 {
   "name": "classfunc-helpers",
-  "version": "2.0.17",
+  "version": "2.0.18",
   "description": "ClassFunc Helpers",
   "main": "./index.js",
   "types": "./index.d.ts",
   "scripts": {
     "build": "node esbuild.cjs",
+    "build:commit": "yarn run build:ts && yarn generate-docs && git add --all && git commit -m 'build'",
     "build:ts": "tsc",
     "build:ts:commit": "yarn run build:ts && yarn generate-docs && git add --all && git commit -m 'build'",
     "generate-docs": "typedoc --plugin typedoc-plugin-markdown --readme ./README.md --out __docs__ index.ts"
