@@ -17,6 +17,7 @@ function buildFile(f) {
   // console.log(outfile);
   const common = {
     entryPoints: [f],
+    plugins: [dtsPlugin()],
   };
 
   return Promise.all([

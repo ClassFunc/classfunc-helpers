@@ -6,12 +6,21 @@
   "module": "./index.mjs",
   "types": "./index.d.ts",
   "scripts": {
-    "build": "tsc && node esbuild.cjs",
+    "build": "node esbuild.cjs",
     "build:esm": "tsc --module es2015 --target es5 --outDir __dist/esm",
     "build:cjs": "tsc --module commonjs --target es5 --outDir __dist/cjs",
     "build:commit": "yarn run build && yarn generate-docs && git add --all && git commit -m 'build'",
     "generate-docs": "typedoc --plugin typedoc-plugin-markdown --readme ./README.md --out __docs__ index.ts"
   },
+  "files": [
+    "**/*.js",
+    "**/*.d.js",
+    "**/*.d.mjs",
+    "db",
+    "diff",
+    "env",
+    "json"
+  ],
   "exports": {
     ".": {
       "require": "./index.js",
