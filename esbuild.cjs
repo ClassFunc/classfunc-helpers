@@ -23,7 +23,7 @@ function buildFile(f) {
     require('esbuild').build({
       ...common,
       format: 'esm',
-      bundle: true,
+      // bundle: true,
       platform: 'node',
       outfile: f.replace('.ts', '.mjs'),
     }),

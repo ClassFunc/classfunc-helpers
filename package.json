@@ -16,27 +16,32 @@
     ".": {
       "require": "./index.js",
       "import": "./index.mjs",
-      "default": "./index.js"
+      "default": "./index.js",
+      "types": "./index.d.ts"
     },
     "./json": {
       "require": "./json/index.js",
       "import": "./json/index.mjs",
-      "default": "./json/index.js"
+      "default": "./json/index.js",
+      "types": "./json/index.d.js"
     },
     "./env": {
       "require": "./json/env.js",
       "default": "./json/env.js",
-      "import": "./json/env.mjs"
+      "import": "./json/env.mjs",
+      "types": "./json/env.d.js"
     },
     "./diff": {
       "require": "./json/diff.js",
       "import": "./json/diff.mjs",
-      "default": "./json/diff.js"
+      "default": "./json/diff.js",
+      "types": "./json/diff.d.js"
     },
     "./db": {
       "require": "./json/db.js",
       "import": "./json/db.mjs",
-      "default": "./json/db.js"
+      "default": "./json/db.js",
+      "types": "./json/db.d.js"
     },
     "./package.json": "./package.json",
     "./index.d.ts": "./index.d.ts"
