@@ -1,6 +1,6 @@
 {
   "name": "classfunc-helpers",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "ClassFunc Helpers",
   "main": "./index.js",
   "module": "./index.mjs",
@@ -13,9 +13,9 @@
     "generate-docs": "typedoc --plugin typedoc-plugin-markdown --readme ./README.md --out __docs__ index.ts"
   },
   "files": [
-    "*.js",
-    "*.d.js",
-    "*.d.mjs",
+    "index.js",
+    "index.mjs",
+    "index.d.ts",
     "db",
     "diff",
     "env",
