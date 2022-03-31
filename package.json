@@ -1,9 +1,8 @@
 {
   "name": "classfunc-helpers",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "ClassFunc Helpers",
   "main": "./index.js",
-  "module": "./index.mjs",
   "types": "./index.d.ts",
   "scripts": {
     "build": "node esbuild.cjs",
@@ -24,31 +23,26 @@
   "exports": {
     ".": {
       "require": "./index.js",
-      "import": "./index.mjs",
       "default": "./index.js",
       "types": "./index.d.ts"
     },
     "./json": {
       "require": "./json/index.js",
-      "import": "./json/index.mjs",
       "default": "./json/index.js",
       "types": "./json/index.d.js"
     },
     "./env": {
       "require": "./json/index.js",
       "default": "./json/index.js",
-      "import": "./json/index.mjs",
       "types": "./json/index.d.js"
     },
     "./diff": {
       "require": "./json/index.js",
-      "import": "./json/index.mjs",
       "default": "./json/index.js",
       "types": "./json/index.d.js"
     },
     "./db": {
       "require": "./json/index.js",
-      "import": "./json/index.mjs",
       "default": "./json/index.js",
       "types": "./json/index.d.js"
     },

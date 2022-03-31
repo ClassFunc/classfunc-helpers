@@ -29,14 +29,14 @@ function buildFile(f) {
     //   platform: 'browser',
     //   outfile: f.replace('.ts', '.browser.mjs'),
     // }),
-    require('esbuild').build({
-      ...common,
-      format: 'esm',
-      // bundle: true,
-      // minify: true,
-      platform: 'node',
-      outfile: f.replace('.ts', '.mjs'),
-    }),
+    // require('esbuild').build({
+    //   ...common,
+    //   format: 'esm',
+    //   // bundle: true,
+    //   // minify: true,
+    //   platform: 'node',
+    //   outfile: f.replace('.ts', '.mjs'),
+    // }),
     require('esbuild').build({
       ...common,
       // minify: true,
