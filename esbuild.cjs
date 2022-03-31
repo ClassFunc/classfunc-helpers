@@ -6,7 +6,7 @@ const files = glob.sync('./**/!(*.d).ts',
 
 files.forEach(async f => {
   console.log(`building ${f}`);
-  console.log(await buildFile(f));
+  buildFile(f);
   console.log(`-- done --`);
 });
 
@@ -17,18 +17,30 @@ function buildFile(f) {
     plugins: [dtsPlugin()],
   };
 
-  return Promise.all([
-    require('esbuild').build({
-      ...common,
-      format: 'esm',
-      outfile: f.replace('.ts', '.esm.js'),
-    }),
-    require('esbuild').build({
-      ...common,
-      format: 'cjs',
-      platform: 'node',
-      outfile: f.replace('.ts', '.cjs.js'),
-    }),
-  ]);
+  const watch = {
+    onRebuild(error, result) {
+      if (error) console.error('watch build failed:', error);
+      else console.log('watch build succeeded:', result);
+    },
+  };
+
+  require('esbuild').build({
+    ...common,
+    format: 'esm',
+    watch,
+    outfile: f.replace('.ts', '.esm.js'),
+  }).then(() => {
+    console.log(`watching esm ${f} ...`);
+  });
+
+  require('esbuild').build({
+    ...common,
+    format: 'cjs',
+    platform: 'node',
+    watch,
+    outfile: f.replace('.ts', '.cjs.js'),
+  }).then(result => {
+    console.log(`watching cjs ${f} ...`);
+  });
 
 }

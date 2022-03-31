@@ -54,34 +54,44 @@ const diffExplain = (before: object, after?: object): string[] => {
 };
 
 const diffObjects = (before: any, after?: any, identities?: string[]): IDiffObject[] => {
-    let diffValue = diff(before, after);
-    if (isEmpty(diffValue))
+
+    if (!after) {
+        return diffObjects(before, isPlainObject(before) ? {} : []);
+    }
+    let diffValues = diff(before, after);
+    if (isEmpty(diffValues))
         return []
-    const mapValues = (values: IDiffObject[]) => {
-        const ret = values.map((o: IDiffObject) => {
+    // logJSON(diffValues)
+    const mapValues = (diffValues: IDiffObject[]) => {
+        const pathMappedValues = diffValues.map((diff: IDiffObject) => {
+                const pathArr = get(diff, 'path')
+                if (isEmpty(pathArr))
+                    return {'__before': diff.lhs, '__after': diff.rhs};
                 return ({
-                    ...set(o, o.path.join('.'), {before: o.lhs, after: o.rhs}),
-                    path: [...o.path, o.path.join('.')],
+                    ...set(diff, pathArr.join('.'), {'__before': diff.lhs, '__after': diff.rhs}),
+                    path: [...pathArr, pathArr.join('.')],
                 })
             },
         )
-        identities = identities ?? uniq(ret.map(r => r.path[0]))
-        return mapIdentities(ret, identities)
+        identities = identities ?? uniq(pathMappedValues.map(r => get(r, 'path.0')))
+        return mapIdentities(pathMappedValues, identities)
     }
-    const mapIdentities = (values: IDiffObject[], ids) => {
-        const val = values.map(d => {
-            return (!Array.isArray(ids) ? [ids] : ids).map(id => {
-                const path = get(d, 'path');
-                if (!path.includes(id))
+    const mapIdentities = (pathMappedValues: IDiffObject[], fields) => {
+        const val = pathMappedValues.map(diff => {
+            if (isEmpty(get(diff, 'path')))
+                return diff;
+            return (!Array.isArray(fields) ? [fields] : fields).map(field => {
+                const pathArr = get(diff, 'path');
+                if (!pathArr?.includes(field))
                     return;
-                const changes = get(d, id);
+                const changes = get(diff, field);
                 if (changes)
-                    return {...changes, __identity__: id};
+                    return {...changes, __field: field};
             });
         });
-        return groupBy(compact(flattenDeep(val)), '__identity__')
+        return groupBy(compact(flattenDeep(val)), '__field')
     }
-    return toObject(mapValues(diffValue))
+    return toObject(mapValues(diffValues));
 };
 const diffValues = diffObjects
 

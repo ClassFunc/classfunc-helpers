@@ -77,32 +77,40 @@ const diffExplain = (before, after) => {
   });
 };
 const diffObjects = (before, after, identities) => {
-  let diffValue = (0, import_deep_diff.diff)(before, after);
-  if ((0, import_isEmpty.default)(diffValue))
+  if (!after) {
+    return diffObjects(before, (0, import_isPlainObject.default)(before) ? {} : []);
+  }
+  let diffValues2 = (0, import_deep_diff.diff)(before, after);
+  if ((0, import_isEmpty.default)(diffValues2))
     return [];
-  const mapValues = (values) => {
-    const ret = values.map((o) => {
-      return __spreadProps(__spreadValues({}, (0, import_set.default)(o, o.path.join("."), { before: o.lhs, after: o.rhs })), {
-        path: [...o.path, o.path.join(".")]
+  const mapValues = (diffValues3) => {
+    const pathMappedValues = diffValues3.map((diff2) => {
+      const pathArr = (0, import_get.default)(diff2, "path");
+      if ((0, import_isEmpty.default)(pathArr))
+        return { "__before": diff2.lhs, "__after": diff2.rhs };
+      return __spreadProps(__spreadValues({}, (0, import_set.default)(diff2, pathArr.join("."), { "__before": diff2.lhs, "__after": diff2.rhs })), {
+        path: [...pathArr, pathArr.join(".")]
       });
     });
-    identities = identities != null ? identities : (0, import_uniq.default)(ret.map((r) => r.path[0]));
-    return mapIdentities(ret, identities);
+    identities = identities != null ? identities : (0, import_uniq.default)(pathMappedValues.map((r) => (0, import_get.default)(r, "path.0")));
+    return mapIdentities(pathMappedValues, identities);
   };
-  const mapIdentities = (values, ids) => {
-    const val = values.map((d) => {
-      return (!Array.isArray(ids) ? [ids] : ids).map((id) => {
-        const path = (0, import_get.default)(d, "path");
-        if (!path.includes(id))
+  const mapIdentities = (pathMappedValues, fields) => {
+    const val = pathMappedValues.map((diff2) => {
+      if ((0, import_isEmpty.default)((0, import_get.default)(diff2, "path")))
+        return diff2;
+      return (!Array.isArray(fields) ? [fields] : fields).map((field) => {
+        const pathArr = (0, import_get.default)(diff2, "path");
+        if (!(pathArr == null ? void 0 : pathArr.includes(field)))
           return;
-        const changes = (0, import_get.default)(d, id);
+        const changes = (0, import_get.default)(diff2, field);
         if (changes)
-          return __spreadProps(__spreadValues({}, changes), { __identity__: id });
+          return __spreadProps(__spreadValues({}, changes), { __field: field });
       });
     });
-    return (0, import_groupBy.default)((0, import_compact.default)((0, import_flattenDeep.default)(val)), "__identity__");
+    return (0, import_groupBy.default)((0, import_compact.default)((0, import_flattenDeep.default)(val)), "__field");
   };
-  return (0, import_json.toObject)(mapValues(diffValue));
+  return (0, import_json.toObject)(mapValues(diffValues2));
 };
 const diffValues = diffObjects;
 function difference(after, before) {

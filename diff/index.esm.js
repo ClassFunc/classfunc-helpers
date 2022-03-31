@@ -49,32 +49,40 @@ const diffExplain = (before, after) => {
   });
 };
 const diffObjects = (before, after, identities) => {
-  let diffValue = diff(before, after);
-  if (isEmpty(diffValue))
+  if (!after) {
+    return diffObjects(before, isPlainObject(before) ? {} : []);
+  }
+  let diffValues2 = diff(before, after);
+  if (isEmpty(diffValues2))
     return [];
-  const mapValues = (values) => {
-    const ret = values.map((o) => {
-      return __spreadProps(__spreadValues({}, set(o, o.path.join("."), { before: o.lhs, after: o.rhs })), {
-        path: [...o.path, o.path.join(".")]
+  const mapValues = (diffValues3) => {
+    const pathMappedValues = diffValues3.map((diff2) => {
+      const pathArr = get(diff2, "path");
+      if (isEmpty(pathArr))
+        return { "__before": diff2.lhs, "__after": diff2.rhs };
+      return __spreadProps(__spreadValues({}, set(diff2, pathArr.join("."), { "__before": diff2.lhs, "__after": diff2.rhs })), {
+        path: [...pathArr, pathArr.join(".")]
       });
     });
-    identities = identities != null ? identities : uniq(ret.map((r) => r.path[0]));
-    return mapIdentities(ret, identities);
+    identities = identities != null ? identities : uniq(pathMappedValues.map((r) => get(r, "path.0")));
+    return mapIdentities(pathMappedValues, identities);
   };
-  const mapIdentities = (values, ids) => {
-    const val = values.map((d) => {
-      return (!Array.isArray(ids) ? [ids] : ids).map((id) => {
-        const path = get(d, "path");
-        if (!path.includes(id))
+  const mapIdentities = (pathMappedValues, fields) => {
+    const val = pathMappedValues.map((diff2) => {
+      if (isEmpty(get(diff2, "path")))
+        return diff2;
+      return (!Array.isArray(fields) ? [fields] : fields).map((field) => {
+        const pathArr = get(diff2, "path");
+        if (!(pathArr == null ? void 0 : pathArr.includes(field)))
           return;
-        const changes = get(d, id);
+        const changes = get(diff2, field);
         if (changes)
-          return __spreadProps(__spreadValues({}, changes), { __identity__: id });
+          return __spreadProps(__spreadValues({}, changes), { __field: field });
       });
     });
-    return groupBy(compact(flattenDeep(val)), "__identity__");
+    return groupBy(compact(flattenDeep(val)), "__field");
   };
-  return toObject(mapValues(diffValue));
+  return toObject(mapValues(diffValues2));
 };
 const diffValues = diffObjects;
 function difference(after, before) {
