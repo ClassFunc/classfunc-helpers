@@ -5,7 +5,7 @@ import forEach from "lodash/forEach";
 import isPlainObject from 'lodash/isPlainObject';
 import isUndefined from "lodash/isUndefined";
 
-const toJSONString = (value: any, format? = true): string => {
+const toJSONString = (value: any, format = true): string => {
     let fmt = format ? [null, 2] : []
     if (typeof value === "undefined") {
         return '{}'
