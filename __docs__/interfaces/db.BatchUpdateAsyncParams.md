@@ -27,7 +27,7 @@
 
 #### Defined in
 
-db/index.d.ts:17
+[db/index.d.ts:17](https://github.com/ClassFunc/classfunc-helpers/blob/91c88bc/db/index.d.ts#L17)
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 #### Defined in
 
-db/index.d.ts:15
+[db/index.d.ts:15](https://github.com/ClassFunc/classfunc-helpers/blob/91c88bc/db/index.d.ts#L15)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-db/index.d.ts:18
+[db/index.d.ts:18](https://github.com/ClassFunc/classfunc-helpers/blob/91c88bc/db/index.d.ts#L18)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-db/index.d.ts:21
+[db/index.d.ts:21](https://github.com/ClassFunc/classfunc-helpers/blob/91c88bc/db/index.d.ts#L21)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-db/index.d.ts:20
+[db/index.d.ts:20](https://github.com/ClassFunc/classfunc-helpers/blob/91c88bc/db/index.d.ts#L20)
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 #### Defined in
 
-db/index.d.ts:16
+[db/index.d.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/91c88bc/db/index.d.ts#L16)
 
 ## Methods
 
@@ -97,4 +97,4 @@ db/index.d.ts:16
 
 #### Defined in
 
-db/index.d.ts:19
+[db/index.d.ts:19](https://github.com/ClassFunc/classfunc-helpers/blob/91c88bc/db/index.d.ts#L19)
