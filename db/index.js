@@ -1,1 +1,125 @@
-var U=Object.create;var g=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var z=Object.getOwnPropertyNames;var E=Object.getPrototypeOf,J=Object.prototype.hasOwnProperty;var N=(t,a)=>{for(var e in a)g(t,e,{get:a[e],enumerable:!0})},w=(t,a,e,s)=>{if(a&&typeof a=="object"||typeof a=="function")for(let c of z(a))!J.call(t,c)&&c!==e&&g(t,c,{get:()=>a[c],enumerable:!(s=d(a,c))||s.enumerable});return t};var B=(t,a,e)=>(e=t!=null?U(E(t)):{},w(a||!t||!t.__esModule?g(e,"default",{value:t,enumerable:!0}):e,t)),R=t=>w(g({},"__esModule",{value:!0}),t);var b=(t,a,e)=>new Promise((s,c)=>{var y=r=>{try{u(e.next(r))}catch(m){c(m)}},l=r=>{try{u(e.throw(r))}catch(m){c(m)}},u=r=>r.done?s(r.value):Promise.resolve(r.value).then(y,l);u((e=e.apply(t,a)).next())});var k={};N(k,{batchSetAsync:()=>x,batchUpdateAsync:()=>O});module.exports=R(k);var S=B(require("lodash/chunk")),f=B(require("lodash/isFunction")),i=require("../json");const x=r=>b(void 0,[r],function*({db:t,values:a,collectionPath:e,idField:s,setObject:c,setOptions:y={merge:!0},size:l=500,log:u=!0}){const m=(0,S.default)(a,l).map(v=>b(void 0,null,function*(){return new Promise((A,p)=>{const o=t.batch();v.forEach(n=>{let h;(0,f.default)(c)&&(h=c(n)),h||(h=n);const P=(0,f.default)(s)?s(n):n[s],j=t.collection(e).doc(P);u&&(0,i.logJSON)("-- set -- ",j.path,h),o.set(j,(0,i.toJSON)(h),y)}),o.commit().then(n=>{u&&(0,i.logJSON)("-- set success --"),A(n)}).catch(n=>{p(n)})})}));return yield Promise.all(m)}),O=u=>b(void 0,[u],function*({db:t,values:a,collectionPath:e,idField:s,updateObject:c,size:y=500,log:l=!0}){const r=(0,S.default)(a,y).map(m=>b(void 0,null,function*(){return new Promise((v,A)=>{const p=t.batch();m.forEach(o=>{let n;(0,f.default)(c)&&(n=c(o)),n||(n=o);const h=(0,f.default)(s)?s(o):o[s],P=t.collection(e).doc(h);l&&(0,i.logJSON)("-- update -- ",P.path,n),p.update(P,(0,i.toJSON)(n))}),p.commit().then(o=>{l&&(0,i.logJSON)("-- update success --"),v(o)}).catch(o=>{A(o)})})}));return yield Promise.all(r)});0&&(module.exports={batchSetAsync,batchUpdateAsync});
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target, mod));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __async = (__this, __arguments, generator) => {
+  return new Promise((resolve, reject) => {
+    var fulfilled = (value) => {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    };
+    var rejected = (value) => {
+      try {
+        step(generator.throw(value));
+      } catch (e) {
+        reject(e);
+      }
+    };
+    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+    step((generator = generator.apply(__this, __arguments)).next());
+  });
+};
+var db_exports = {};
+__export(db_exports, {
+  batchSetAsync: () => batchSetAsync,
+  batchUpdateAsync: () => batchUpdateAsync
+});
+module.exports = __toCommonJS(db_exports);
+var import_chunk = __toESM(require("lodash/chunk"));
+var import_isFunction = __toESM(require("lodash/isFunction"));
+var import_json = require("../json");
+const batchSetAsync = (_0) => __async(void 0, [_0], function* ({
+  db,
+  values,
+  collectionPath,
+  idField,
+  setObject,
+  setOptions = { merge: true },
+  size = 500,
+  log = true
+}) {
+  const batchPromises = (0, import_chunk.default)(values, size).map((ck) => __async(void 0, null, function* () {
+    return new Promise((resolve, reject) => {
+      const batch = db.batch();
+      ck.forEach((doc) => {
+        let value;
+        if ((0, import_isFunction.default)(setObject))
+          value = setObject(doc);
+        if (!value)
+          value = doc;
+        const docPath = (0, import_isFunction.default)(idField) ? idField(doc) : doc[idField];
+        const docRef = db.collection(collectionPath).doc(docPath);
+        if (log)
+          (0, import_json.logJSON)("-- set -- ", docRef.path, value);
+        batch.set(docRef, (0, import_json.toJSON)(value), setOptions);
+      });
+      batch.commit().then((results) => {
+        if (log)
+          (0, import_json.logJSON)("-- set success --");
+        resolve(results);
+      }).catch((e) => {
+        reject(e);
+      });
+    });
+  }));
+  return yield Promise.all(batchPromises);
+});
+const batchUpdateAsync = (_0) => __async(void 0, [_0], function* ({
+  db,
+  values,
+  collectionPath,
+  idField,
+  updateObject,
+  size = 500,
+  log = true
+}) {
+  const batchPromises = (0, import_chunk.default)(values, size).map((ck) => __async(void 0, null, function* () {
+    return new Promise((resolve, reject) => {
+      const batch = db.batch();
+      ck.forEach((doc) => {
+        let value;
+        if ((0, import_isFunction.default)(updateObject))
+          value = updateObject(doc);
+        if (!value)
+          value = doc;
+        const docPath = (0, import_isFunction.default)(idField) ? idField(doc) : doc[idField];
+        const docRef = db.collection(collectionPath).doc(docPath);
+        if (log)
+          (0, import_json.logJSON)("-- update -- ", docRef.path, value);
+        batch.update(docRef, (0, import_json.toJSON)(value));
+      });
+      batch.commit().then((results) => {
+        if (log)
+          (0, import_json.logJSON)("-- update success --");
+        resolve(results);
+      }).catch((e) => {
+        reject(e);
+      });
+    });
+  }));
+  return yield Promise.all(batchPromises);
+});
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  batchSetAsync,
+  batchUpdateAsync
+});

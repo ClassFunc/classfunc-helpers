@@ -21,17 +21,25 @@ function buildFile(f) {
   };
 
   return Promise.all([
+    // require('esbuild').build({
+    //   ...common,
+    //   format: 'esm',
+    //   // bundle: true,
+    //   // minify: true,
+    //   platform: 'browser',
+    //   outfile: f.replace('.ts', '.browser.mjs'),
+    // }),
     require('esbuild').build({
       ...common,
       format: 'esm',
-      bundle: true,
-      minify: true,
+      // bundle: true,
+      // minify: true,
       platform: 'node',
       outfile: f.replace('.ts', '.mjs'),
     }),
     require('esbuild').build({
       ...common,
-      minify: true,
+      // minify: true,
       format: 'cjs',
       platform: 'node',
       outfile: f.replace('.ts', '.js'),

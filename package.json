@@ -1,6 +1,6 @@
 {
   "name": "classfunc-helpers",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "ClassFunc Helpers",
   "main": "./index.js",
   "module": "./index.mjs",
@@ -35,22 +35,22 @@
       "types": "./json/index.d.js"
     },
     "./env": {
-      "require": "./json/env.js",
-      "default": "./json/env.js",
-      "import": "./json/env.mjs",
-      "types": "./json/env.d.js"
+      "require": "./json/index.js",
+      "default": "./json/index.js",
+      "import": "./json/index.mjs",
+      "types": "./json/index.d.js"
     },
     "./diff": {
-      "require": "./json/diff.js",
-      "import": "./json/diff.mjs",
-      "default": "./json/diff.js",
-      "types": "./json/diff.d.js"
+      "require": "./json/index.js",
+      "import": "./json/index.mjs",
+      "default": "./json/index.js",
+      "types": "./json/index.d.js"
     },
     "./db": {
-      "require": "./json/db.js",
-      "import": "./json/db.mjs",
-      "default": "./json/db.js",
-      "types": "./json/db.d.js"
+      "require": "./json/index.js",
+      "import": "./json/index.mjs",
+      "default": "./json/index.js",
+      "types": "./json/index.d.js"
     },
     "./package.json": "./package.json",
     "./index.d.ts": "./index.d.ts"
