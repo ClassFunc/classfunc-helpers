@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[diff/index.d.ts:1](https://github.com/ClassFunc/classfunc-helpers/blob/91c88bc/diff/index.d.ts#L1)
+[diff/index.d.ts:1](https://github.com/ClassFunc/classfunc-helpers/blob/b9fd5ec/diff/index.d.ts#L1)
 
 ## Functions
 
@@ -50,7 +50,7 @@
 
 #### Defined in
 
-[diff/index.d.ts:19](https://github.com/ClassFunc/classfunc-helpers/blob/91c88bc/diff/index.d.ts#L19)
+[diff/index.d.ts:19](https://github.com/ClassFunc/classfunc-helpers/blob/b9fd5ec/diff/index.d.ts#L19)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 #### Defined in
 
-[diff/index.d.ts:18](https://github.com/ClassFunc/classfunc-helpers/blob/91c88bc/diff/index.d.ts#L18)
+[diff/index.d.ts:18](https://github.com/ClassFunc/classfunc-helpers/blob/b9fd5ec/diff/index.d.ts#L18)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[diff/index.d.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/91c88bc/diff/index.d.ts#L14)
+[diff/index.d.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/b9fd5ec/diff/index.d.ts#L14)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[diff/index.d.ts:15](https://github.com/ClassFunc/classfunc-helpers/blob/91c88bc/diff/index.d.ts#L15)
+[diff/index.d.ts:15](https://github.com/ClassFunc/classfunc-helpers/blob/b9fd5ec/diff/index.d.ts#L15)
 
 ___
 
@@ -136,7 +136,7 @@ ___
 
 #### Defined in
 
-[diff/index.d.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/91c88bc/diff/index.d.ts#L16)
+[diff/index.d.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/b9fd5ec/diff/index.d.ts#L16)
 
 ___
 
@@ -157,4 +157,4 @@ ___
 
 #### Defined in
 
-[diff/index.d.ts:17](https://github.com/ClassFunc/classfunc-helpers/blob/91c88bc/diff/index.d.ts#L17)
+[diff/index.d.ts:17](https://github.com/ClassFunc/classfunc-helpers/blob/b9fd5ec/diff/index.d.ts#L17)

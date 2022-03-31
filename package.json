@@ -8,18 +8,13 @@
   "scripts": {
     "build": "node esbuild.cjs",
     "build:commit": "yarn run build && yarn generate-docs && git add --all && git commit -m 'build'",
-    "build:ts": "tsc",
-    "build:ts:commit": "yarn run build:ts && yarn generate-docs && git add --all && git commit -m 'build'",
-    "generate-docs": "typedoc --plugin typedoc-plugin-markdown --readme ./README.md --out __docs__ index.ts"
+    "generate-docs": "typedoc --plugin typedoc-plugin-markdown --readme ./README.md --out __docs__ index.ts",
+    "pre-publish": "npm publish --dry-run"
   },
   "files": [
-    "index.ts",
-    "index.js",
-    "index.d.ts",
-    "db",
-    "diff",
-    "env",
-    "json"
+    "**/*.js",
+    "**/*.d.ts",
+    "**/package.json"
   ],
   "keywords": [],
   "author": "ClassFunc Softwares JSC",
