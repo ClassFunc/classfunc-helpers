@@ -24,12 +24,14 @@ function buildFile(f) {
     require('esbuild').build({
       ...common,
       format: 'esm',
-      // bundle: true,
+      bundle: true,
+      minify: true,
       platform: 'node',
       outfile: f.replace('.ts', '.mjs'),
     }),
     require('esbuild').build({
       ...common,
+      minify: true,
       format: 'cjs',
       platform: 'node',
       outfile: f.replace('.ts', '.js'),
