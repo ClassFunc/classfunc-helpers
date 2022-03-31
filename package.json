@@ -1,8 +1,9 @@
 {
   "name": "classfunc-helpers",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "ClassFunc Helpers",
   "main": "./index.js",
+  "module": "./index.js",
   "types": "./index.d.ts",
   "scripts": {
     "build": "tsc",
@@ -10,6 +11,13 @@
     "build:cjs": "tsc --module commonjs --target es5 --outDir __dist/cjs",
     "build:commit": "yarn run build && yarn generate-docs && git add --all && git commit -m 'build'",
     "generate-docs": "typedoc --plugin typedoc-plugin-markdown --readme ./README.md --out __docs__ index.ts"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./json": "./json/index.js",
+    "./env": "./json/env.js",
+    "./diff": "./json/diff.js",
+    "./db": "./json/db.js"
   },
   "keywords": [],
   "author": "ClassFunc Softwares JSC",
