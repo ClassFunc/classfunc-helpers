@@ -17,7 +17,9 @@
     "./json": "./json/index.js",
     "./env": "./json/env.js",
     "./diff": "./json/diff.js",
-    "./db": "./json/db.js"
+    "./db": "./json/db.js",
+    "./package.json": "./package.json",
+    "./index.d.ts": "./index.d.ts"
   },
   "keywords": [],
   "author": "ClassFunc Softwares JSC",
