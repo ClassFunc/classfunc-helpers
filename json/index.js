@@ -1,53 +1,81 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.logJSON = exports.removeUndefined = exports.omitByDeep = exports.removeUndefinedDeep = exports.toJSON = exports.toObject = exports.toJSONString = void 0;
-const clone_1 = __importDefault(require("lodash/clone"));
-const forEach_1 = __importDefault(require("lodash/forEach"));
-const isPlainObject_1 = __importDefault(require("lodash/isPlainObject"));
-const isUndefined_1 = __importDefault(require("lodash/isUndefined"));
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target, mod));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var json_exports = {};
+__export(json_exports, {
+  logJSON: () => logJSON,
+  omitByDeep: () => omitByDeep,
+  removeUndefined: () => removeUndefined,
+  removeUndefinedDeep: () => removeUndefinedDeep,
+  toJSON: () => toJSON,
+  toJSONString: () => toJSONString,
+  toObject: () => toObject
+});
+module.exports = __toCommonJS(json_exports);
+var import_clone = __toESM(require("lodash/clone"));
+var import_forEach = __toESM(require("lodash/forEach"));
+var import_isPlainObject = __toESM(require("lodash/isPlainObject"));
+var import_isUndefined = __toESM(require("lodash/isUndefined"));
 const toJSONString = (value, format = true) => {
-    let fmt = format ? [null, 2] : [];
-    if (typeof value === "undefined") {
-        return '{}';
-    }
-    return JSON.stringify(value, ...fmt);
+  let fmt = format ? [null, 2] : [];
+  if (typeof value === "undefined") {
+    return "{}";
+  }
+  return JSON.stringify(value, ...fmt);
 };
-exports.toJSONString = toJSONString;
 const toObject = (value) => {
-    if (typeof value === "string")
-        return JSON.parse(value);
-    return JSON.parse(toJSONString(value, false));
+  if (typeof value === "string")
+    return JSON.parse(value);
+  return JSON.parse(toJSONString(value, false));
 };
-exports.toObject = toObject;
 const toJSON = toObject;
-exports.toJSON = toJSON;
 const omitByDeep = (obj, shouldOmit) => {
-    obj = (0, clone_1.default)(obj);
-    (0, forEach_1.default)(obj, (value, key) => {
-        if (shouldOmit(value, key)) {
-            delete obj[key];
-        }
-        if ((0, isPlainObject_1.default)(value)) {
-            obj[key] = omitByDeep(value, shouldOmit);
-        }
-    });
-    return obj;
-};
-exports.omitByDeep = omitByDeep;
-const removeUndefined = obj => {
-    return toObject(omitByDeep(obj, isUndefined_1.default));
-};
-exports.removeUndefined = removeUndefined;
-const removeUndefinedDeep = (obj) => {
-    return JSON.parse(JSON.stringify(obj));
-};
-exports.removeUndefinedDeep = removeUndefinedDeep;
-const logJSON = (...value) => {
-    for (const val of value) {
-        console.log(toJSONString(val));
+  obj = (0, import_clone.default)(obj);
+  (0, import_forEach.default)(obj, (value, key) => {
+    if (shouldOmit(value, key)) {
+      delete obj[key];
     }
+    if ((0, import_isPlainObject.default)(value)) {
+      obj[key] = omitByDeep(value, shouldOmit);
+    }
+  });
+  return obj;
 };
-exports.logJSON = logJSON;
+const removeUndefined = (obj) => {
+  return toObject(omitByDeep(obj, import_isUndefined.default));
+};
+const removeUndefinedDeep = (obj) => {
+  return JSON.parse(JSON.stringify(obj));
+};
+const logJSON = (...value) => {
+  for (const val of value) {
+    console.log(toJSONString(val));
+  }
+};
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  logJSON,
+  omitByDeep,
+  removeUndefined,
+  removeUndefinedDeep,
+  toJSON,
+  toJSONString,
+  toObject
+});
