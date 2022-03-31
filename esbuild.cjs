@@ -3,39 +3,36 @@ const {dtsPlugin} = require('esbuild-plugin-d.ts');
 
 const files = glob.sync('./**/!(*.d).ts',
     {cwd: __dirname, ignore: ['./node_modules/**']});
-console.log(files);
 
-const common = {
-  entryPoints: files,
-  // splitting: true,
-  // bundle: true,
-  plugins: [dtsPlugin()],
-};
-
-require('esbuild').build({
-  ...common,
-  format: 'cjs',
-  outdir: '__build',
-});
-require('esbuild').build({
-  ...common,
-  format: 'esm',
-  outdir: '__build',
-  outExtension: {'.js': '.mjs'},
+files.forEach(async f => {
+  console.log(`building ${f}`);
+  console.log(await buildFile(f));
+  console.log(`-- done --`);
 });
 
-// require('esbuild').build({
-//   ...common,
-//   platform: 'browser',
-//   format: 'esm',
-//   outdir: '__build',
-//   outExtension: {'.js': '.browser.mjs'},
-// });
+function buildFile(f) {
+  // console.log(f);
+  const outdir = f.split('/index.ts')[0];
+  const outfile = f.replace('.ts', '.js');
+  // console.log(outfile);
+  const common = {
+    entryPoints: [f],
+  };
 
-// require('esbuild').build({
-//   ...common,
-//   platform: 'node',
-//   format: 'cjs',
-//   outdir: '__build',
-//   outExtension: {'.js': '.node.cjs'},
-// });
+  return Promise.all([
+    require('esbuild').build({
+      ...common,
+      format: 'esm',
+      bundle: true,
+      platform: 'node',
+      outfile: f.replace('.ts', '.mjs'),
+    }),
+    require('esbuild').build({
+      ...common,
+      format: 'cjs',
+      platform: 'node',
+      outfile: f.replace('.ts', '.js'),
+    }),
+  ]);
+
+}

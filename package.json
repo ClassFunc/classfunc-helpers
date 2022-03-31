@@ -3,21 +3,41 @@
   "version": "2.0.7",
   "description": "ClassFunc Helpers",
   "main": "./index.js",
-  "module": "./index.js",
+  "module": "./index.mjs",
   "types": "./index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && node esbuild.cjs",
     "build:esm": "tsc --module es2015 --target es5 --outDir __dist/esm",
     "build:cjs": "tsc --module commonjs --target es5 --outDir __dist/cjs",
     "build:commit": "yarn run build && yarn generate-docs && git add --all && git commit -m 'build'",
     "generate-docs": "typedoc --plugin typedoc-plugin-markdown --readme ./README.md --out __docs__ index.ts"
   },
   "exports": {
-    ".": "./index.js",
-    "./json": "./json/index.js",
-    "./env": "./json/env.js",
-    "./diff": "./json/diff.js",
-    "./db": "./json/db.js",
+    ".": {
+      "require": "./index.js",
+      "import": "./index.mjs",
+      "default": "./index.js"
+    },
+    "./json": {
+      "require": "./json/index.js",
+      "import": "./json/index.mjs",
+      "default": "./json/index.js"
+    },
+    "./env": {
+      "require": "./json/env.js",
+      "default": "./json/env.js",
+      "import": "./json/env.mjs"
+    },
+    "./diff": {
+      "require": "./json/diff.js",
+      "import": "./json/diff.mjs",
+      "default": "./json/diff.js"
+    },
+    "./db": {
+      "require": "./json/db.js",
+      "import": "./json/db.mjs",
+      "default": "./json/db.js"
+    },
     "./package.json": "./package.json",
     "./index.d.ts": "./index.d.ts"
   },
@@ -29,10 +49,10 @@
   "license": "ISC",
   "dependencies": {
     "deep-diff": "^1.0.2",
-    "esbuild": "^0.14.29",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "esbuild": "^0.14.29",
     "@types/lodash": "^4.14.180",
     "esbuild-plugin-d.ts": "^1.1.0",
     "glob": "^7.2.0",
