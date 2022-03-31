@@ -2,7 +2,8 @@
   "name": "classfunc-helpers",
   "version": "2.0.19",
   "description": "ClassFunc Helpers",
-  "main": "./index.js",
+  "main": "./index.cjs.js",
+  "module": "./index.esm.js",
   "types": "./index.d.ts",
   "scripts": {
     "build": "node esbuild.cjs",
@@ -20,35 +21,6 @@
     "env",
     "json"
   ],
-  "exports": {
-    ".": {
-      "require": "./index.js",
-      "default": "./index.js",
-      "types": "./index.d.ts"
-    },
-    "./json": {
-      "require": "./json/index.js",
-      "default": "./json/index.js",
-      "types": "./json/index.d.js"
-    },
-    "./env": {
-      "require": "./env/index.js",
-      "default": "./env/index.js",
-      "types": "./env/index.d.js"
-    },
-    "./diff": {
-      "require": "./diff/index.js",
-      "default": "./diff/index.js",
-      "types": "./diff/index.d.js"
-    },
-    "./db": {
-      "require": "./db/index.js",
-      "default": "./db/index.js",
-      "types": "./db/index.d.js"
-    },
-    "./package.json": "./package.json",
-    "./index.d.ts": "./index.d.ts"
-  },
   "keywords": [],
   "author": "ClassFunc Softwares JSC",
   "repository": {

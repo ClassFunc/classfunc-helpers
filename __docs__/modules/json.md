@@ -32,7 +32,7 @@
 
 #### Defined in
 
-[json/index.ts:44](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/json/index.ts#L44)
+json/index.d.ts:7
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[json/index.ts:23](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/json/index.ts#L23)
+json/index.d.ts:4
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 #### Defined in
 
-[json/index.ts:36](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/json/index.ts#L36)
+json/index.d.ts:5
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[json/index.ts:40](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/json/index.ts#L40)
+json/index.d.ts:6
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-[json/index.ts:21](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/json/index.ts#L21)
+json/index.d.ts:3
 
 ___
 
@@ -123,10 +123,10 @@ ___
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `value` | `any` | `undefined` |
-| `format` | `boolean` | `true` |
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+| `format?` | `boolean` |
 
 #### Returns
 
@@ -134,7 +134,7 @@ ___
 
 #### Defined in
 
-[json/index.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/json/index.ts#L8)
+json/index.d.ts:1
 
 ___
 
@@ -154,4 +154,4 @@ ___
 
 #### Defined in
 
-[json/index.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/json/index.ts#L16)
+json/index.d.ts:2

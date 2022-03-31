@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[diff/index.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/diff/index.ts#L16)
+diff/index.d.ts:1
 
 ## Functions
 
@@ -50,7 +50,7 @@
 
 #### Defined in
 
-[diff/index.ts:114](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/diff/index.ts#L114)
+diff/index.d.ts:19
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 #### Defined in
 
-[diff/index.ts:113](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/diff/index.ts#L113)
+diff/index.d.ts:18
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[diff/index.ts:32](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/diff/index.ts#L32)
+diff/index.d.ts:14
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[diff/index.ts:56](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/diff/index.ts#L56)
+diff/index.d.ts:15
 
 ___
 
@@ -136,7 +136,7 @@ ___
 
 #### Defined in
 
-[diff/index.ts:86](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/diff/index.ts#L86)
+diff/index.d.ts:16
 
 ___
 
@@ -144,21 +144,17 @@ ___
 
 ▸ **difference**(`after`, `before?`): `unknown`
 
-Deep diff between two after, using lodash
-
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `after` | `object` | Object compared |
-| `before?` | `object` | Object to compare with |
+| Name | Type |
+| :------ | :------ |
+| `after` | `object` |
+| `before?` | `object` |
 
 #### Returns
 
 `unknown`
 
-Return a new after who represent the diff
-
 #### Defined in
 
-[diff/index.ts:94](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/diff/index.ts#L94)
+diff/index.d.ts:17

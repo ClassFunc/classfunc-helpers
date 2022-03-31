@@ -11,38 +11,23 @@ files.forEach(async f => {
 });
 
 function buildFile(f) {
-  // console.log(f);
-  const outdir = f.split('/index.ts')[0];
-  const outfile = f.replace('.ts', '.js');
-  // console.log(outfile);
+
   const common = {
     entryPoints: [f],
     plugins: [dtsPlugin()],
   };
 
   return Promise.all([
-    // require('esbuild').build({
-    //   ...common,
-    //   format: 'esm',
-    //   // bundle: true,
-    //   // minify: true,
-    //   platform: 'browser',
-    //   outfile: f.replace('.ts', '.browser.mjs'),
-    // }),
-    // require('esbuild').build({
-    //   ...common,
-    //   format: 'esm',
-    //   // bundle: true,
-    //   // minify: true,
-    //   platform: 'node',
-    //   outfile: f.replace('.ts', '.mjs'),
-    // }),
     require('esbuild').build({
       ...common,
-      // minify: true,
+      format: 'esm',
+      outfile: f.replace('.ts', '.esm.js'),
+    }),
+    require('esbuild').build({
+      ...common,
       format: 'cjs',
       platform: 'node',
-      outfile: f.replace('.ts', '.js'),
+      outfile: f.replace('.ts', '.cjs.js'),
     }),
   ]);
 

@@ -35,37 +35,37 @@
 
 #### Defined in
 
-[env/index.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L6)
+env/index.d.ts:1
 
 ___
 
 ### FIREBASE\_AUTH\_EMULATOR\_HOST
 
-• `Const` **FIREBASE\_AUTH\_EMULATOR\_HOST**: `any` = `process.env.FIREBASE_AUTH_EMULATOR_HOST`
+• `Const` **FIREBASE\_AUTH\_EMULATOR\_HOST**: `any`
 
 #### Defined in
 
-[env/index.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L14)
+env/index.d.ts:8
 
 ___
 
 ### FIREBASE\_CONFIG
 
-• `Const` **FIREBASE\_CONFIG**: `any` = `process.env.FIREBASE_CONFIG`
+• `Const` **FIREBASE\_CONFIG**: `any`
 
 #### Defined in
 
-[env/index.ts:19](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L19)
+env/index.d.ts:13
 
 ___
 
 ### FIREBASE\_DATABASE\_EMULATOR\_HOST
 
-• `Const` **FIREBASE\_DATABASE\_EMULATOR\_HOST**: `any` = `process.env.FIREBASE_DATABASE_EMULATOR_HOST`
+• `Const` **FIREBASE\_DATABASE\_EMULATOR\_HOST**: `any`
 
 #### Defined in
 
-[env/index.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L16)
+env/index.d.ts:10
 
 ___
 
@@ -75,27 +75,27 @@ ___
 
 #### Defined in
 
-[env/index.ts:13](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L13)
+env/index.d.ts:7
 
 ___
 
 ### FIREBASE\_STORAGE\_EMULATOR\_HOST
 
-• `Const` **FIREBASE\_STORAGE\_EMULATOR\_HOST**: `any` = `process.env.FIREBASE_STORAGE_EMULATOR_HOST`
+• `Const` **FIREBASE\_STORAGE\_EMULATOR\_HOST**: `any`
 
 #### Defined in
 
-[env/index.ts:17](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L17)
+env/index.d.ts:11
 
 ___
 
 ### FIRESTORE\_EMULATOR\_HOST
 
-• `Const` **FIRESTORE\_EMULATOR\_HOST**: `any` = `process.env.FIRESTORE_EMULATOR_HOST`
+• `Const` **FIRESTORE\_EMULATOR\_HOST**: `any`
 
 #### Defined in
 
-[env/index.ts:15](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L15)
+env/index.d.ts:9
 
 ___
 
@@ -105,27 +105,27 @@ ___
 
 #### Defined in
 
-[env/index.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L12)
+env/index.d.ts:6
 
 ___
 
 ### GCLOUD\_PROJECT
 
-• `Const` **GCLOUD\_PROJECT**: `any` = `process.env.GCLOUD_PROJECT`
+• `Const` **GCLOUD\_PROJECT**: `any`
 
 #### Defined in
 
-[env/index.ts:18](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L18)
+env/index.d.ts:12
 
 ___
 
 ### GOOGLE\_APPLICATION\_CREDENTIALS
 
-• `Const` **GOOGLE\_APPLICATION\_CREDENTIALS**: `any` = `process.env.GOOGLE_APPLICATION_CREDENTIALS`
+• `Const` **GOOGLE\_APPLICATION\_CREDENTIALS**: `any`
 
 #### Defined in
 
-[env/index.ts:20](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L20)
+env/index.d.ts:14
 
 ___
 
@@ -135,7 +135,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L7)
+env/index.d.ts:2
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L11)
+env/index.d.ts:5
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:9](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L9)
+env/index.d.ts:4
 
 ___
 
@@ -165,7 +165,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L8)
+env/index.d.ts:3
 
 ## Functions
 
@@ -179,7 +179,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:30](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L30)
+env/index.d.ts:16
 
 ___
 
@@ -193,7 +193,7 @@ ___
 
 #### Defined in
 
-[env/index.ts:22](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L22)
+env/index.d.ts:15
 
 ___
 
@@ -213,4 +213,4 @@ ___
 
 #### Defined in
 
-[env/index.ts:34](https://github.com/ClassFunc/classfunc-helpers/blob/2b780ad/env/index.ts#L34)
+env/index.d.ts:17
