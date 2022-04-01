@@ -1,18 +1,11 @@
 // @ts-nocheck
 
-import isEmpty from 'lodash/isEmpty'
 import isEqual from 'lodash/isEqual'
 import isPlainObject from 'lodash/isPlainObject'
 import set from 'lodash/set'
 import transform from 'lodash/transform'
-import uniq from 'lodash/uniq'
 import {diff} from 'deep-diff';
-import {logJSON, toJSONString, toObject} from "../json";
-import get from "lodash/get";
 import pick from "lodash/pick";
-import groupBy from "lodash/groupBy";
-import compact from "lodash/compact";
-import flattenDeep from "lodash/flattenDeep";
 
 export type IKind = 'N' | 'D' | 'E' | 'A'
 
@@ -29,74 +22,75 @@ export interface IDiffObject {
     rhs: object
 }
 
+//
+//
+// const diffExplain = (before: object, after?: object): string[] => {
+//     let diffArr = diffObjects(before, after);
+//     const explain: Record<IKind, string> = {
+//         'N': 'added',
+//         'D': 'deleted',
+//         'E': 'edited',
+//         'A': 'array',
+//     };
+//     return diffArr.map((diffObj: IDiffObject) => {
+//         const item = diffObj.item;
+//         const itemKind = item?.kind;
+//         let kindExplain: string = '';
+//         if (itemKind) {
+//             kindExplain = explain[item.kind];
+//         }
+//         return `${explain[diffObj.kind]} ${toJSONString(
+//             diffObj.path?.join('.'))} ${diffObj.index > -1
+//             ? `at ${diffObj.index}`
+//             : ''} ${itemKind ? `${toJSONString(kindExplain)} ${itemKind === 'N' ? toJSONString(
+//             item.rhs) : toJSONString(item.lhs)}` : `${toJSONString(diffObj.lhs)} -> ${toJSONString(
+//             diffObj.rhs)}`}`;
+//     });
+// };
+//
+// const diffObjects = (before: any, after?: any, identities?: string[]): IDiffObject[] => {
+//
+//     if (!after) {
+//         return diffObjects(before, isPlainObject(before) ? {} : []);
+//     }
+//     let diffValues = diff(before, after);
+//     if (isEmpty(diffValues))
+//         return []
+//     logJSON(diffValues)
+//     const mapValues = (diffValues: IDiffObject[]) => {
+//         const pathMappedValues = diffValues.map((diff: IDiffObject) => {
+//                 const pathArr = get(diff, 'path')
+//                 if (isEmpty(pathArr))
+//                     return {'__b': diff.lhs, '___afterfter': diff.rhs};
+//                 return ({
+//                     ...set(diff, pathArr.join('.'), {'__b': diff.lhs, '___afterfter': diff.rhs}),
+//                     path: [...pathArr, pathArr.join('.')],
+//                 })
+//             },
+//         )
+//         identities = identities ?? uniq(pathMappedValues.map(r => get(r, 'path.0')))
+//         return mapIdentities(pathMappedValues, identities)
+//     }
+//     const mapIdentities = (pathMappedValues: IDiffObject[], fields) => {
+//         const val = pathMappedValues.map(diff => {
+//             if (isEmpty(get(diff, 'path')))
+//                 return diff;
+//             return (!Array.isArray(fields) ? [fields] : fields).map(field => {
+//                 const pathArr = get(diff, 'path');
+//                 if (!pathArr?.includes(field))
+//                     return;
+//                 const changes = get(diff, field);
+//                 if (changes)
+//                     return {...changes, __field: field};
+//             });
+//         });
+//         return groupBy(compact(flattenDeep(val)), '__field')
+//     }
+//     return toObject(mapValues(diffValues));
+// };
+// const diffValues = diffObjects
 
-const diffExplain = (before: object, after?: object): string[] => {
-    let diffArr = diffObjects(before, after);
-    const explain: Record<IKind, string> = {
-        'N': 'added',
-        'D': 'deleted',
-        'E': 'edited',
-        'A': 'array',
-    };
-    return diffArr.map((diffObj: IDiffObject) => {
-        const item = diffObj.item;
-        const itemKind = item?.kind;
-        let kindExplain: string = '';
-        if (itemKind) {
-            kindExplain = explain[item.kind];
-        }
-        return `${explain[diffObj.kind]} ${toJSONString(
-            diffObj.path?.join('.'))} ${diffObj.index > -1
-            ? `at ${diffObj.index}`
-            : ''} ${itemKind ? `${toJSONString(kindExplain)} ${itemKind === 'N' ? toJSONString(
-            item.rhs) : toJSONString(item.lhs)}` : `${toJSONString(diffObj.lhs)} -> ${toJSONString(
-            diffObj.rhs)}`}`;
-    });
-};
-
-const diffObjects = (before: any, after?: any, identities?: string[]): IDiffObject[] => {
-
-    if (!after) {
-        return diffObjects(before, isPlainObject(before) ? {} : []);
-    }
-    let diffValues = diff(before, after);
-    if (isEmpty(diffValues))
-        return []
-    logJSON(diffValues)
-    const mapValues = (diffValues: IDiffObject[]) => {
-        const pathMappedValues = diffValues.map((diff: IDiffObject) => {
-                const pathArr = get(diff, 'path')
-                if (isEmpty(pathArr))
-                    return {'__before': diff.lhs, '__after': diff.rhs};
-                return ({
-                    ...set(diff, pathArr.join('.'), {'__before': diff.lhs, '__after': diff.rhs}),
-                    path: [...pathArr, pathArr.join('.')],
-                })
-            },
-        )
-        identities = identities ?? uniq(pathMappedValues.map(r => get(r, 'path.0')))
-        return mapIdentities(pathMappedValues, identities)
-    }
-    const mapIdentities = (pathMappedValues: IDiffObject[], fields) => {
-        const val = pathMappedValues.map(diff => {
-            if (isEmpty(get(diff, 'path')))
-                return diff;
-            return (!Array.isArray(fields) ? [fields] : fields).map(field => {
-                const pathArr = get(diff, 'path');
-                if (!pathArr?.includes(field))
-                    return;
-                const changes = get(diff, field);
-                if (changes)
-                    return {...changes, __field: field};
-            });
-        });
-        return groupBy(compact(flattenDeep(val)), '__field')
-    }
-    return toObject(mapValues(diffValues));
-};
-const diffValues = diffObjects
-
-export const diff2 = (before: any, after?: any, pickFields?: string[]) => {
+const diff2 = (before: any, after?: any, pickFields?: string[]) => {
     const diffValues = diff(before, after)
     let ret = {}
     diffValues.forEach(diff => {
@@ -104,15 +98,15 @@ export const diff2 = (before: any, after?: any, pickFields?: string[]) => {
             case 'N':
             case 'E':
             case 'D':
-                ret = set(ret, diff?.path?.join('.'), {_b: diff.lhs, _a: diff.rhs})
+                ret = set(ret, diff?.path?.join('.'), {__b: diff.lhs, __a: diff.rhs})
                 break;
             case 'A':
                 const p = diff?.path?.join('.') + `.${diff.index}`
                 let val;
                 if (diff.item.kind === 'N')
-                    val = {_a: diff.item.rhs}
+                    val = {__a: diff.item.rhs}
                 else if (diff.item.kind === 'D')
-                    val = {_b: diff.item.lhs}
+                    val = {__b: diff.item.lhs}
                 ret = set(ret, p, val)
                 break;
         }
@@ -128,7 +122,7 @@ export const diff2 = (before: any, after?: any, pickFields?: string[]) => {
  * @param  {Object} before   Object to compare with
  * @return {Object}        Return a new after who represent the diff
  */
-function difference(after: object, before?: object) {
+const difference = (after: object, before?: object) => {
     if (!before)//created
         return after;
 
@@ -151,9 +145,10 @@ const diffBeforeAfter = (before: any, after: any) => difference(after, before)
 const diffAfterBefore = (after: any, before: any) => difference(after, before)
 
 export {
-    diffExplain,
-    diffObjects,
-    diffValues,
+    // diffExplain,
+    // diffObjects,
+    // diffValues,
+    diff2,
     difference,
     diffBeforeAfter,
     diffAfterBefore
