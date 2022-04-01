@@ -1,9 +1,6 @@
 // @ts-nocheck
 
-import isEqual from 'lodash/isEqual'
-import isPlainObject from 'lodash/isPlainObject'
 import set from 'lodash/set'
-import transform from 'lodash/transform'
 import {diff} from 'deep-diff';
 import pick from "lodash/pick";
 
@@ -115,6 +112,8 @@ const diff2 = (before: any, after?: any, pickFields?: string[]) => {
         return pick(ret, pickFields)
     return ret;
 }
+const diffObjects = diff2;
+const diffValues = diff2;
 
 /**
  * Deep diff between two after, using lodash
@@ -122,34 +121,36 @@ const diff2 = (before: any, after?: any, pickFields?: string[]) => {
  * @param  {Object} before   Object to compare with
  * @return {Object}        Return a new after who represent the diff
  */
-const difference = (after: object, before?: object) => {
-    if (!before)//created
-        return after;
-
-    // else updated or deleted;
-    function changes(object: object, base: object) {
-        return transform(object, function (result, value, key) {
-            if (!isEqual(value, base[key])) {
-                // @ts-ignore
-                result[key] = (isPlainObject(value) && isPlainObject(base[key]))
-                    ? changes(value, base[key])
-                    : value;
-            }
-        });
-    }
-
-    return changes(after, before);
-}
-
-const diffBeforeAfter = (before: any, after: any) => difference(after, before)
-const diffAfterBefore = (after: any, before: any) => difference(after, before)
+// const difference = (after: object, before?: object) => {
+//     if (!before)//created
+//         return after;
+//
+//     // else updated or deleted;
+//     function changes(object: object, base: object) {
+//         return transform(object, function (result, value, key) {
+//             if (!isEqual(value, base[key])) {
+//                 // @ts-ignore
+//                 result[key] = (isPlainObject(value) && isPlainObject(base[key]))
+//                     ? changes(value, base[key])
+//                     : value;
+//             }
+//         });
+//     }
+//
+//     return changes(after, before);
+// }
+//
+// const diffBeforeAfter = (before: any, after: any) => difference(after, before)
+// const diffAfterBefore = (after: any, before: any) => difference(after, before)
 
 export {
     // diffExplain,
     // diffObjects,
     // diffValues,
+    diffObjects,
+    diffValues,
     diff2,
-    difference,
-    diffBeforeAfter,
-    diffAfterBefore
+    // difference,
+    // diffBeforeAfter,
+    // diffAfterBefore
 }

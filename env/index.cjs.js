@@ -79,7 +79,7 @@ const getFirebaseConfig = () => {
 const getEmulatorsConfig = () => {
   return (0, import_get.default)(getFirebaseConfig(), "emulators");
 };
-const setFirebaseEmulators = (info) => {
+const setFirebaseEmulators = (debug) => {
   const fConfig = getFirebaseConfig();
   process.env.GCLOUD_PROJECT = (0, import_get.default)(fConfig, "projects.default");
   const authPort = (0, import_get.default)(fConfig, "emulators.auth.port");
@@ -93,7 +93,7 @@ const setFirebaseEmulators = (info) => {
     process.env.FIRESTORE_EMULATOR_HOST = localhost(firestorePort);
   if (storagePort)
     process.env.FIREBASE_STORAGE_EMULATOR_HOST = localhost(storagePort);
-  if (info) {
+  if (debug) {
     (0, import_json.logJSON)(fConfig);
   }
 };

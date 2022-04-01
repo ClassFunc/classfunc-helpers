@@ -15,9 +15,8 @@
 ### Functions
 
 - [diff2](diff.md#diff2)
-- [diffAfterBefore](diff.md#diffafterbefore)
-- [diffBeforeAfter](diff.md#diffbeforeafter)
-- [difference](diff.md#difference)
+- [diffObjects](diff.md#diffobjects)
+- [diffValues](diff.md#diffvalues)
 
 ## Type aliases
 
@@ -27,7 +26,7 @@
 
 #### Defined in
 
-[diff/index.d.ts:1](https://github.com/ClassFunc/classfunc-helpers/blob/7f22d1a/diff/index.d.ts#L1)
+[diff/index.d.ts:1](https://github.com/ClassFunc/classfunc-helpers/blob/e37e1c7/diff/index.d.ts#L1)
 
 ## Functions
 
@@ -49,67 +48,48 @@
 
 #### Defined in
 
-[diff/index.d.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/7f22d1a/diff/index.d.ts#L14)
+[diff/index.d.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/e37e1c7/diff/index.d.ts#L14)
 
 ___
 
-### diffAfterBefore
+### diffObjects
 
-▸ **diffAfterBefore**(`after`, `before`): `unknown`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `after` | `any` |
-| `before` | `any` |
-
-#### Returns
-
-`unknown`
-
-#### Defined in
-
-[diff/index.d.ts:17](https://github.com/ClassFunc/classfunc-helpers/blob/7f22d1a/diff/index.d.ts#L17)
-
-___
-
-### diffBeforeAfter
-
-▸ **diffBeforeAfter**(`before`, `after`): `unknown`
+▸ **diffObjects**(`before`, `after?`, `pickFields?`): `Object`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `before` | `any` |
-| `after` | `any` |
+| `after?` | `any` |
+| `pickFields?` | `string`[] |
 
 #### Returns
 
-`unknown`
+`Object`
 
 #### Defined in
 
-[diff/index.d.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/7f22d1a/diff/index.d.ts#L16)
+[diff/index.d.ts:15](https://github.com/ClassFunc/classfunc-helpers/blob/e37e1c7/diff/index.d.ts#L15)
 
 ___
 
-### difference
+### diffValues
 
-▸ **difference**(`after`, `before?`): `unknown`
+▸ **diffValues**(`before`, `after?`, `pickFields?`): `Object`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `after` | `object` |
-| `before?` | `object` |
+| `before` | `any` |
+| `after?` | `any` |
+| `pickFields?` | `string`[] |
 
 #### Returns
 
-`unknown`
+`Object`
 
 #### Defined in
 
-[diff/index.d.ts:15](https://github.com/ClassFunc/classfunc-helpers/blob/7f22d1a/diff/index.d.ts#L15)
+[diff/index.d.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/e37e1c7/diff/index.d.ts#L16)

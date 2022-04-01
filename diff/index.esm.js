@@ -1,13 +1,10 @@
-import isEqual from "lodash/isEqual";
-import isPlainObject from "lodash/isPlainObject";
 import set from "lodash/set";
-import transform from "lodash/transform";
 import { diff } from "deep-diff";
 import pick from "lodash/pick";
 const diff2 = (before, after, pickFields) => {
-  const diffValues = diff(before, after);
+  const diffValues2 = diff(before, after);
   let ret = {};
-  diffValues.forEach((diff3) => {
+  diffValues2.forEach((diff3) => {
     var _a, _b;
     switch (diff3.kind) {
       case "N":
@@ -30,23 +27,10 @@ const diff2 = (before, after, pickFields) => {
     return pick(ret, pickFields);
   return ret;
 };
-const difference = (after, before) => {
-  if (!before)
-    return after;
-  function changes(object, base) {
-    return transform(object, function(result, value, key) {
-      if (!isEqual(value, base[key])) {
-        result[key] = isPlainObject(value) && isPlainObject(base[key]) ? changes(value, base[key]) : value;
-      }
-    });
-  }
-  return changes(after, before);
-};
-const diffBeforeAfter = (before, after) => difference(after, before);
-const diffAfterBefore = (after, before) => difference(after, before);
+const diffObjects = diff2;
+const diffValues = diff2;
 export {
   diff2,
-  diffAfterBefore,
-  diffBeforeAfter,
-  difference
+  diffObjects,
+  diffValues
 };

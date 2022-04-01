@@ -14,5 +14,5 @@ declare const FIREBASE_CONFIG: any;
 declare const GOOGLE_APPLICATION_CREDENTIALS: any;
 declare const getFirebaseConfig: () => any;
 declare const getEmulatorsConfig: () => any;
-declare const setFirebaseEmulators: (info?: boolean | undefined) => void;
+declare const setFirebaseEmulators: (debug?: boolean | undefined) => void;
 export { IS_DEV, IS_STG, IS_PROD, ENV, IS_FIREBASE_CLI, FUNCTIONS_EMULATOR, FIREBASE_DEBUG_MODE, FIREBASE_AUTH_EMULATOR_HOST, FIRESTORE_EMULATOR_HOST, FIREBASE_DATABASE_EMULATOR_HOST, FIREBASE_STORAGE_EMULATOR_HOST, GCLOUD_PROJECT, FIREBASE_CONFIG, GOOGLE_APPLICATION_CREDENTIALS, getEmulatorsConfig, getFirebaseConfig, setFirebaseEmulators, };
