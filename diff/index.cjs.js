@@ -37,6 +37,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 var diff_exports = {};
 __export(diff_exports, {
+  diff2: () => diff2,
   diffAfterBefore: () => diffAfterBefore,
   diffBeforeAfter: () => diffBeforeAfter,
   diffExplain: () => diffExplain,
@@ -54,6 +55,7 @@ var import_uniq = __toESM(require("lodash/uniq"));
 var import_deep_diff = require("deep-diff");
 var import_json = require("../json");
 var import_get = __toESM(require("lodash/get"));
+var import_pick = __toESM(require("lodash/pick"));
 var import_groupBy = __toESM(require("lodash/groupBy"));
 var import_compact = __toESM(require("lodash/compact"));
 var import_flattenDeep = __toESM(require("lodash/flattenDeep"));
@@ -83,12 +85,13 @@ const diffObjects = (before, after, identities) => {
   let diffValues2 = (0, import_deep_diff.diff)(before, after);
   if ((0, import_isEmpty.default)(diffValues2))
     return [];
+  (0, import_json.logJSON)(diffValues2);
   const mapValues = (diffValues3) => {
-    const pathMappedValues = diffValues3.map((diff2) => {
-      const pathArr = (0, import_get.default)(diff2, "path");
+    const pathMappedValues = diffValues3.map((diff3) => {
+      const pathArr = (0, import_get.default)(diff3, "path");
       if ((0, import_isEmpty.default)(pathArr))
-        return { "__before": diff2.lhs, "__after": diff2.rhs };
-      return __spreadProps(__spreadValues({}, (0, import_set.default)(diff2, pathArr.join("."), { "__before": diff2.lhs, "__after": diff2.rhs })), {
+        return { "__before": diff3.lhs, "__after": diff3.rhs };
+      return __spreadProps(__spreadValues({}, (0, import_set.default)(diff3, pathArr.join("."), { "__before": diff3.lhs, "__after": diff3.rhs })), {
         path: [...pathArr, pathArr.join(".")]
       });
     });
@@ -96,14 +99,14 @@ const diffObjects = (before, after, identities) => {
     return mapIdentities(pathMappedValues, identities);
   };
   const mapIdentities = (pathMappedValues, fields) => {
-    const val = pathMappedValues.map((diff2) => {
-      if ((0, import_isEmpty.default)((0, import_get.default)(diff2, "path")))
-        return diff2;
+    const val = pathMappedValues.map((diff3) => {
+      if ((0, import_isEmpty.default)((0, import_get.default)(diff3, "path")))
+        return diff3;
       return (!Array.isArray(fields) ? [fields] : fields).map((field) => {
-        const pathArr = (0, import_get.default)(diff2, "path");
+        const pathArr = (0, import_get.default)(diff3, "path");
         if (!(pathArr == null ? void 0 : pathArr.includes(field)))
           return;
-        const changes = (0, import_get.default)(diff2, field);
+        const changes = (0, import_get.default)(diff3, field);
         if (changes)
           return __spreadProps(__spreadValues({}, changes), { __field: field });
       });
@@ -113,6 +116,32 @@ const diffObjects = (before, after, identities) => {
   return (0, import_json.toObject)(mapValues(diffValues2));
 };
 const diffValues = diffObjects;
+const diff2 = (before, after, pickFields) => {
+  const diffValues2 = (0, import_deep_diff.diff)(before, after);
+  let ret = {};
+  diffValues2.forEach((diff3) => {
+    var _a, _b;
+    switch (diff3.kind) {
+      case "N":
+      case "E":
+      case "D":
+        ret = (0, import_set.default)(ret, (_a = diff3 == null ? void 0 : diff3.path) == null ? void 0 : _a.join("."), { _b: diff3.lhs, _a: diff3.rhs });
+        break;
+      case "A":
+        const p = ((_b = diff3 == null ? void 0 : diff3.path) == null ? void 0 : _b.join(".")) + `.${diff3.index}`;
+        let val;
+        if (diff3.item.kind === "N")
+          val = { _a: diff3.item.rhs };
+        else if (diff3.item.kind === "D")
+          val = { _b: diff3.item.lhs };
+        ret = (0, import_set.default)(ret, p, val);
+        break;
+    }
+  });
+  if (pickFields)
+    return (0, import_pick.default)(ret, pickFields);
+  return ret;
+};
 function difference(after, before) {
   if (!before)
     return after;
@@ -129,6 +158,7 @@ const diffBeforeAfter = (before, after) => difference(after, before);
 const diffAfterBefore = (after, before) => difference(after, before);
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
+  diff2,
   diffAfterBefore,
   diffBeforeAfter,
   diffExplain,

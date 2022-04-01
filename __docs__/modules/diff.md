@@ -14,6 +14,7 @@
 
 ### Functions
 
+- [diff2](diff.md#diff2)
 - [diffAfterBefore](diff.md#diffafterbefore)
 - [diffBeforeAfter](diff.md#diffbeforeafter)
 - [diffExplain](diff.md#diffexplain)
@@ -29,9 +30,31 @@
 
 #### Defined in
 
-[diff/index.d.ts:1](https://github.com/ClassFunc/classfunc-helpers/blob/4a1d87e/diff/index.d.ts#L1)
+[diff/index.d.ts:1](https://github.com/ClassFunc/classfunc-helpers/blob/4ea5fb6/diff/index.d.ts#L1)
 
 ## Functions
+
+### diff2
+
+▸ **diff2**(`before`, `after?`, `pickFields?`): `Object`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `before` | `any` |
+| `after?` | `any` |
+| `pickFields?` | `string`[] |
+
+#### Returns
+
+`Object`
+
+#### Defined in
+
+[diff/index.d.ts:17](https://github.com/ClassFunc/classfunc-helpers/blob/4ea5fb6/diff/index.d.ts#L17)
+
+___
 
 ### diffAfterBefore
 
@@ -50,7 +73,7 @@
 
 #### Defined in
 
-[diff/index.d.ts:19](https://github.com/ClassFunc/classfunc-helpers/blob/4a1d87e/diff/index.d.ts#L19)
+[diff/index.d.ts:20](https://github.com/ClassFunc/classfunc-helpers/blob/4ea5fb6/diff/index.d.ts#L20)
 
 ___
 
@@ -71,7 +94,7 @@ ___
 
 #### Defined in
 
-[diff/index.d.ts:18](https://github.com/ClassFunc/classfunc-helpers/blob/4a1d87e/diff/index.d.ts#L18)
+[diff/index.d.ts:19](https://github.com/ClassFunc/classfunc-helpers/blob/4ea5fb6/diff/index.d.ts#L19)
 
 ___
 
@@ -92,7 +115,7 @@ ___
 
 #### Defined in
 
-[diff/index.d.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/4a1d87e/diff/index.d.ts#L14)
+[diff/index.d.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/4ea5fb6/diff/index.d.ts#L14)
 
 ___
 
@@ -114,7 +137,7 @@ ___
 
 #### Defined in
 
-[diff/index.d.ts:15](https://github.com/ClassFunc/classfunc-helpers/blob/4a1d87e/diff/index.d.ts#L15)
+[diff/index.d.ts:15](https://github.com/ClassFunc/classfunc-helpers/blob/4ea5fb6/diff/index.d.ts#L15)
 
 ___
 
@@ -136,7 +159,7 @@ ___
 
 #### Defined in
 
-[diff/index.d.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/4a1d87e/diff/index.d.ts#L16)
+[diff/index.d.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/4ea5fb6/diff/index.d.ts#L16)
 
 ___
 
@@ -157,4 +180,4 @@ ___
 
 #### Defined in
 
-[diff/index.d.ts:17](https://github.com/ClassFunc/classfunc-helpers/blob/4a1d87e/diff/index.d.ts#L17)
+[diff/index.d.ts:18](https://github.com/ClassFunc/classfunc-helpers/blob/4ea5fb6/diff/index.d.ts#L18)

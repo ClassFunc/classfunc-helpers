@@ -7,8 +7,9 @@ import set from 'lodash/set'
 import transform from 'lodash/transform'
 import uniq from 'lodash/uniq'
 import {diff} from 'deep-diff';
-import {toJSONString, toObject} from "../json";
+import {logJSON, toJSONString, toObject} from "../json";
 import get from "lodash/get";
+import pick from "lodash/pick";
 import groupBy from "lodash/groupBy";
 import compact from "lodash/compact";
 import flattenDeep from "lodash/flattenDeep";
@@ -61,7 +62,7 @@ const diffObjects = (before: any, after?: any, identities?: string[]): IDiffObje
     let diffValues = diff(before, after);
     if (isEmpty(diffValues))
         return []
-    // logJSON(diffValues)
+    logJSON(diffValues)
     const mapValues = (diffValues: IDiffObject[]) => {
         const pathMappedValues = diffValues.map((diff: IDiffObject) => {
                 const pathArr = get(diff, 'path')
@@ -94,6 +95,32 @@ const diffObjects = (before: any, after?: any, identities?: string[]): IDiffObje
     return toObject(mapValues(diffValues));
 };
 const diffValues = diffObjects
+
+export const diff2 = (before: any, after?: any, pickFields?: string[]) => {
+    const diffValues = diff(before, after)
+    let ret = {}
+    diffValues.forEach(diff => {
+        switch (diff.kind) {
+            case 'N':
+            case 'E':
+            case 'D':
+                ret = set(ret, diff?.path?.join('.'), {_b: diff.lhs, _a: diff.rhs})
+                break;
+            case 'A':
+                const p = diff?.path?.join('.') + `.${diff.index}`
+                let val;
+                if (diff.item.kind === 'N')
+                    val = {_a: diff.item.rhs}
+                else if (diff.item.kind === 'D')
+                    val = {_b: diff.item.lhs}
+                ret = set(ret, p, val)
+                break;
+        }
+    })
+    if (pickFields)
+        return pick(ret, pickFields)
+    return ret;
+}
 
 /**
  * Deep diff between two after, using lodash
