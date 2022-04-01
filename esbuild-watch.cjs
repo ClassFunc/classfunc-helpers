@@ -19,8 +19,8 @@ function buildFile(f) {
 
   const watch = {
     onRebuild(error, result) {
-      if (error) console.error('watch build failed:', error);
-      else console.log('watch build succeeded:', result);
+      if (error) console.error('❌ watch build failed:', error);
+      else console.log('✅ watch build succeeded:', result);
     },
   };
 
@@ -30,7 +30,7 @@ function buildFile(f) {
     watch,
     outfile: f.replace('.ts', '.esm.js'),
   }).then(() => {
-    console.log(`watching esm ${f} ...`);
+    console.log(`👀 watching esm ${f} ...`);
   });
 
   require('esbuild').build({
@@ -40,7 +40,7 @@ function buildFile(f) {
     watch,
     outfile: f.replace('.ts', '.cjs.js'),
   }).then(result => {
-    console.log(`watching cjs ${f} ...`);
+    console.log(`👀 watching cjs ${f} ...`);
   });
 
 }
