@@ -30,12 +30,17 @@ const FIREBASE_STORAGE_EMULATOR_HOST = process.env.FIREBASE_STORAGE_EMULATOR_HOS
 const GCLOUD_PROJECT = process.env.GCLOUD_PROJECT;
 const FIREBASE_CONFIG = process.env.FIREBASE_CONFIG;
 const GOOGLE_APPLICATION_CREDENTIALS = process.env.GOOGLE_APPLICATION_CREDENTIALS;
-const getFirebaseConfig = () => {
+const getFirebaseConfig = (path) => {
   const pwd = process.env.PWD;
+  if (!pwd)
+    throw new Error("getFirebaseConfig error, ensure process.env.PWD exists?");
   const functionsRoot = pwd.split("/functions")[0];
   const firebaseJsonContent = eval("require")("fs").readFileSync(eval("require")("path").join(functionsRoot, "firebase.json"), "utf-8");
   const firebaseRcContent = eval("require")("fs").readFileSync(eval("require")("path").join(functionsRoot, ".firebaserc"), "utf-8");
-  return __spreadValues(__spreadValues({}, toJSON(firebaseJsonContent)), toJSON(firebaseRcContent));
+  const conf = __spreadValues(__spreadValues({}, toJSON(firebaseJsonContent)), toJSON(firebaseRcContent));
+  if (path)
+    return get(conf, path);
+  return conf;
 };
 const getEmulatorsConfig = () => {
   return get(getFirebaseConfig(), "emulators");
