@@ -23,17 +23,20 @@ __export(classfunc_helpers_exports, {
   db: () => db,
   diff: () => diff,
   env: () => env,
+  firebase: () => firebase,
   json: () => json
 });
 module.exports = __toCommonJS(classfunc_helpers_exports);
 var diff = __toESM(require("./diff"));
 var json = __toESM(require("./json"));
 var env = __toESM(require("./env"));
+var firebase = __toESM(require("./firebase"));
 var db = __toESM(require("./db"));
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   db,
   diff,
   env,
+  firebase,
   json
 });
