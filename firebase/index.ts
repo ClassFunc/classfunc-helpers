@@ -1,6 +1,7 @@
 // @ts-nocheck
 
 import {logJSON, toJSON} from "../json";
+import {IS_FIREBASE_CLI} from '../env';
 import get from "lodash/get";
 
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
@@ -30,11 +31,14 @@ const getFirebaseConfig = (path?: string | any[]) => {
     return conf;
 }
 
-const getEmulatorsConfig = () => {
-    return get(getFirebaseConfig(), 'emulators')
+const getEmulatorConfig = (selector?: string) => {
+    const allConfig = get(getFirebaseConfig(), 'emulators')
+    if (selector)
+        return get(allConfig, selector)
+    return allConfig
 }
 
-const getEmulatorHost: string = (emulator: string, hostname?: string = 'localhost') => {
+const getEmulatorHost = (emulator: string, hostname?: string = 'localhost'): string => {
     const fConfig = getFirebaseConfig()
     const host = port => `${hostname}:${port}`
     return host(get(fConfig, `emulators.${emulator}.port`))
@@ -61,20 +65,20 @@ const setFirebaseEmulators = (debug?: boolean) => {
     }
 }
 
-/*
-*  browser-only functions
-* */
+export const getDefaultProjectName = (): string => {
+    return getFirebaseConfig('projects.default');
+}
 
-const onRequestFunctionUrl: string = (functionName: string) => {
-    if (!isBrowser())
-        return;
-    let pathname = window.location.pathname.split('/');
-    pathname.splice(-1, 1, functionName);
-    return pathname.join('/');
+export const httpsFunctionEndpoint = (functionName?: string, region?: string = 'asia-northeast1'): string => {
+    const functionHost = getEmulatorHost('functions');
+    const project = getDefaultProjectName();
+    return IS_FIREBASE_CLI ?
+        `http://${functionHost}/${project}/${region}/${functionName || process.env.FUNCTION_NAME}` :
+        `https://${region}-${project}.cloudfunctions.net/${functionName || process.env.FUNCTION_NAME}`;
 }
 
 export {
-    getEmulatorsConfig,
+    getEmulatorConfig,
     getFirebaseConfig,
     setFirebaseEmulators,
     getEmulatorHost,

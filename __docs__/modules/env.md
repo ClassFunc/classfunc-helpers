@@ -21,12 +21,6 @@
 - [IS\_PROD](env.md#is_prod)
 - [IS\_STG](env.md#is_stg)
 
-### Functions
-
-- [getEmulatorsConfig](env.md#getemulatorsconfig)
-- [getFirebaseConfig](env.md#getfirebaseconfig)
-- [setFirebaseEmulators](env.md#setfirebaseemulators)
-
 ## Variables
 
 ### ENV
@@ -35,7 +29,7 @@
 
 #### Defined in
 
-[env/index.d.ts:1](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L1)
+[env/index.d.ts:1](https://github.com/ClassFunc/classfunc-helpers/blob/c0d6ceb/env/index.d.ts#L1)
 
 ___
 
@@ -45,7 +39,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L8)
+[env/index.d.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/c0d6ceb/env/index.d.ts#L8)
 
 ___
 
@@ -55,7 +49,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:13](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L13)
+[env/index.d.ts:13](https://github.com/ClassFunc/classfunc-helpers/blob/c0d6ceb/env/index.d.ts#L13)
 
 ___
 
@@ -65,7 +59,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:10](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L10)
+[env/index.d.ts:10](https://github.com/ClassFunc/classfunc-helpers/blob/c0d6ceb/env/index.d.ts#L10)
 
 ___
 
@@ -75,7 +69,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L7)
+[env/index.d.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/c0d6ceb/env/index.d.ts#L7)
 
 ___
 
@@ -85,7 +79,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L11)
+[env/index.d.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/c0d6ceb/env/index.d.ts#L11)
 
 ___
 
@@ -95,7 +89,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:9](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L9)
+[env/index.d.ts:9](https://github.com/ClassFunc/classfunc-helpers/blob/c0d6ceb/env/index.d.ts#L9)
 
 ___
 
@@ -105,7 +99,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L6)
+[env/index.d.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/c0d6ceb/env/index.d.ts#L6)
 
 ___
 
@@ -115,7 +109,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L12)
+[env/index.d.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/c0d6ceb/env/index.d.ts#L12)
 
 ___
 
@@ -125,7 +119,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L14)
+[env/index.d.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/c0d6ceb/env/index.d.ts#L14)
 
 ___
 
@@ -135,7 +129,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:2](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L2)
+[env/index.d.ts:2](https://github.com/ClassFunc/classfunc-helpers/blob/c0d6ceb/env/index.d.ts#L2)
 
 ___
 
@@ -145,7 +139,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:5](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L5)
+[env/index.d.ts:5](https://github.com/ClassFunc/classfunc-helpers/blob/c0d6ceb/env/index.d.ts#L5)
 
 ___
 
@@ -155,7 +149,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L4)
+[env/index.d.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/c0d6ceb/env/index.d.ts#L4)
 
 ___
 
@@ -165,58 +159,4 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:3](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L3)
-
-## Functions
-
-### getEmulatorsConfig
-
-▸ **getEmulatorsConfig**(): `any`
-
-#### Returns
-
-`any`
-
-#### Defined in
-
-[env/index.d.ts:16](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L16)
-
-___
-
-### getFirebaseConfig
-
-▸ **getFirebaseConfig**(`path?`): `any`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `path?` | `string` \| `any`[] |
-
-#### Returns
-
-`any`
-
-#### Defined in
-
-[env/index.d.ts:15](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L15)
-
-___
-
-### setFirebaseEmulators
-
-▸ **setFirebaseEmulators**(`debug?`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `debug?` | `boolean` |
-
-#### Returns
-
-`void`
-
-#### Defined in
-
-[env/index.d.ts:17](https://github.com/ClassFunc/classfunc-helpers/blob/fc6ab51/env/index.d.ts#L17)
+[env/index.d.ts:3](https://github.com/ClassFunc/classfunc-helpers/blob/c0d6ceb/env/index.d.ts#L3)

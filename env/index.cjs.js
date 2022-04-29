@@ -30,7 +30,7 @@ __export(env_exports, {
   IS_DEV: () => IS_DEV,
   IS_FIREBASE_CLI: () => IS_FIREBASE_CLI,
   IS_PROD: () => IS_PROD,
-  IS_STG: () => IS_STG,
+  IS_STG: () => IS_STG
 });
 module.exports = __toCommonJS(env_exports);
 const ENV = process.env.REACT_APP_ENV || process.env.NODE_ENV;
@@ -62,5 +62,5 @@ const GOOGLE_APPLICATION_CREDENTIALS = process.env.GOOGLE_APPLICATION_CREDENTIAL
   IS_DEV,
   IS_FIREBASE_CLI,
   IS_PROD,
-    IS_STG,
+  IS_STG
 });
