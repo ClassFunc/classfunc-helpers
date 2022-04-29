@@ -6,4 +6,4 @@ declare const getEmulatorHost: (emulator: string, hostname?: string | undefined)
 declare const setFirebaseEmulators: (debug?: boolean | undefined) => void;
 export declare const getDefaultProjectName: () => string;
 export declare const httpsFunctionEndpoint: (functionName?: string | undefined, region?: string | undefined) => string;
-export { getEmulatorConfig, getFirebaseConfig, setFirebaseEmulators, getEmulatorHost, onRequestFunctionUrl, isBrowser, isNode };
+export { getEmulatorConfig, getFirebaseConfig, setFirebaseEmulators, getEmulatorHost, isBrowser, isNode };

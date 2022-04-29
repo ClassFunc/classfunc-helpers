@@ -82,7 +82,6 @@ export {
     getFirebaseConfig,
     setFirebaseEmulators,
     getEmulatorHost,
-    onRequestFunctionUrl,
     isBrowser,
     isNode
 }
