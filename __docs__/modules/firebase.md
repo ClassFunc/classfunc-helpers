@@ -27,7 +27,7 @@
 
 #### Defined in
 
-[firebase/index.d.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/2663593/firebase/index.d.ts#L7)
+[firebase/index.d.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/7b793e2/firebase/index.d.ts#L7)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-[firebase/index.d.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/2663593/firebase/index.d.ts#L4)
+[firebase/index.d.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/7b793e2/firebase/index.d.ts#L4)
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-[firebase/index.d.ts:5](https://github.com/ClassFunc/classfunc-helpers/blob/2663593/firebase/index.d.ts#L5)
+[firebase/index.d.ts:5](https://github.com/ClassFunc/classfunc-helpers/blob/7b793e2/firebase/index.d.ts#L5)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[firebase/index.d.ts:3](https://github.com/ClassFunc/classfunc-helpers/blob/2663593/firebase/index.d.ts#L3)
+[firebase/index.d.ts:3](https://github.com/ClassFunc/classfunc-helpers/blob/7b793e2/firebase/index.d.ts#L3)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-[firebase/index.d.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/2663593/firebase/index.d.ts#L8)
+[firebase/index.d.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/7b793e2/firebase/index.d.ts#L8)
 
 ___
 
@@ -123,7 +123,7 @@ ___
 
 #### Defined in
 
-[firebase/index.d.ts:1](https://github.com/ClassFunc/classfunc-helpers/blob/2663593/firebase/index.d.ts#L1)
+[firebase/index.d.ts:1](https://github.com/ClassFunc/classfunc-helpers/blob/7b793e2/firebase/index.d.ts#L1)
 
 ___
 
@@ -137,7 +137,7 @@ ___
 
 #### Defined in
 
-[firebase/index.d.ts:2](https://github.com/ClassFunc/classfunc-helpers/blob/2663593/firebase/index.d.ts#L2)
+[firebase/index.d.ts:2](https://github.com/ClassFunc/classfunc-helpers/blob/7b793e2/firebase/index.d.ts#L2)
 
 ___
 
@@ -157,4 +157,4 @@ ___
 
 #### Defined in
 
-[firebase/index.d.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/2663593/firebase/index.d.ts#L6)
+[firebase/index.d.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/7b793e2/firebase/index.d.ts#L6)

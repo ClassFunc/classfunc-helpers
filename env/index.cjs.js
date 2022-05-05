@@ -33,7 +33,7 @@ __export(env_exports, {
   IS_STG: () => IS_STG
 });
 module.exports = __toCommonJS(env_exports);
-const ENV = process.env.REACT_APP_ENV || process.env.NODE_ENV;
+const ENV = process.env.REACT_APP_ENV || process.env.NEXT_PUBLIC_APP_ENV || process.env.NODE_ENV;
 const IS_DEV = ENV === "development" || ENV === "dev";
 const IS_STG = ENV === "stg" || ENV === "staging";
 const IS_PROD = ENV === "production" || ENV === "prod";

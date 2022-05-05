@@ -1,4 +1,4 @@
-const ENV = process.env.REACT_APP_ENV || "development";
+const ENV = process.env.REACT_APP_ENV || process.env.NEXT_PUBLIC_APP_ENV || "development";
 const IS_DEV = ENV === "development" || ENV === "dev";
 const IS_STG = ENV === "stg" || ENV === "staging";
 const IS_PROD = ENV === "production" || ENV === "prod";
