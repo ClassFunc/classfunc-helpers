@@ -1,0 +1,6 @@
+{
+  "name": "classfunc-helpers/hash",
+  "main": "./index.cjs.js",
+  "module": "./index.esm.js",
+  "typings": "./index.d.ts"
+}
