@@ -28,20 +28,23 @@ export const toHashString = (obj: any): string => {
     Object.keys(obj).forEach(k => {
         // @ts-ignore
         const val = obj[k]
-        result = result + `${k}:${val};`
+        result += `${k}:${val};`
     })
 
     return result;
 }
 
 export const setHash = (hash: string | object) => {
-    let hashObj;
-    if (isPlainObject(hash))
-        hashObj = hash;
-    else if (typeof hash === 'string')
-        hashObj = toHashObject(window.location.hash + ';' + hash)
+    if (typeof hash === "undefined")
+        return;
+    let hashStr;
+    if (isPlainObject(hash)) { // @ts-ignore
+        hashStr = toHashString(hash);
+    } else if (typeof hash === 'string')
+        hashStr = hash;
 
-    window.location.hash = toHashString(hashObj)
+    const newHash = window.location.hash + ';' + hashStr;
+    window.location.hash = toHashString(toHashObject(newHash));
 }
 
 export const resetHash = (str?: string) => {
