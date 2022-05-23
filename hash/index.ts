@@ -19,7 +19,7 @@ export const toHashObject = (hash: string): object | null => {
         }, {})
 }
 
-export const toHashString = (obj: Object | null): string => {
+export const toHashString = (obj: object | null): string => {
     if (!isPlainObject(obj))
         return '';
     let result = ''
