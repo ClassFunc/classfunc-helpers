@@ -18,17 +18,20 @@ const toHashString = (obj) => {
   let result = "";
   Object.keys(obj).forEach((k) => {
     const val = obj[k];
-    result = result + `${k}:${val};`;
+    result += `${k}:${val};`;
   });
   return result;
 };
 const setHash = (hash) => {
-  let hashObj;
-  if (isPlainObject(hash))
-    hashObj = hash;
-  else if (typeof hash === "string")
-    hashObj = toHashObject(window.location.hash + ";" + hash);
-  window.location.hash = toHashString(hashObj);
+  if (typeof hash === "undefined")
+    return;
+  let hashStr;
+  if (isPlainObject(hash)) {
+    hashStr = toHashString(hash);
+  } else if (typeof hash === "string")
+    hashStr = hash;
+  const newHash = window.location.hash + ";" + hashStr;
+  window.location.hash = toHashString(toHashObject(newHash));
 };
 const resetHash = (str) => {
   window.location.hash = str || "";
