@@ -1,6 +1,6 @@
 {
   "name": "classfunc-helpers",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "ClassFunc Helpers",
   "main": "./index.cjs.js",
   "module": "./index.esm.js",

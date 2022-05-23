@@ -1,10 +1,10 @@
 import isEmpty from "lodash/isEmpty";
 import isPlainObject from "lodash/isPlainObject";
 
-export const toHashObject = (hash: string): object | null => {
+export const toHashObject = (hash: string): object => {
 
     if (isEmpty(hash))
-        return null;
+        return {};
     hash = hash.replace('#', '')
 
     return hash.split(';')
@@ -19,10 +19,10 @@ export const toHashObject = (hash: string): object | null => {
         }, {})
 }
 
-export const toHashString = (obj: object | null): string => {
-    if (!isPlainObject(obj))
+export const toHashString = (obj: any): string => {
+    if (!isPlainObject(obj) || isEmpty(obj))
         return '';
-    let result = ''
+    let result = '';
 
     // @ts-ignore
     Object.keys(obj).forEach(k => {
@@ -34,9 +34,16 @@ export const toHashString = (obj: object | null): string => {
     return result;
 }
 
-export const setHash = (str: string) => {
-    const newHash = window.location.hash + ';' + str;
-    window.location.hash = toHashString(toHashObject(newHash));
+export const setHash = (hash: string | object) => {
+    let hashObj;
+    if (isPlainObject(hash))
+        hashObj = hash;
+    else if (typeof hash === 'string')
+        hashObj = toHashObject(window.location.hash + ';' + hash)
+
+    window.location.hash = toHashString(hashObj)
 }
 
-
+export const resetHash = (str?: string) => {
+    window.location.hash = str || '';
+}
