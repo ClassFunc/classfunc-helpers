@@ -69,12 +69,11 @@ export const getDefaultProjectName = (): string => {
     return getFirebaseConfig('projects.default');
 }
 
-export const httpsFunctionEndpoint = (functionName?: string, region?: string = 'asia-northeast1'): string => {
-    const functionHost = getEmulatorHost('functions');
-    const project = getDefaultProjectName();
+export const httpsFunctionEndpoint = (emulatorsFunctionsPort: any, functionName?: string, region?: string = 'asia-northeast1'): string => {
+    const {projectId, locationId} = JSON.parse(process.env.FIREBASE_CONFIG)
     return IS_FIREBASE_CLI ?
-        `http://${functionHost}/${project}/${region}/${functionName || process.env.FUNCTION_NAME}` :
-        `https://${region}-${project}.cloudfunctions.net/${functionName || process.env.FUNCTION_NAME}`;
+        `http://localhost:${emulatorsFunctionsPort}/${projectId}/${region || locationId}/${functionName || process.env.FUNCTION_NAME}` :
+        `https://${region || locationId}-${projectId}.cloudfunctions.net/${functionName || process.env.FUNCTION_NAME}`;
 }
 
 export {

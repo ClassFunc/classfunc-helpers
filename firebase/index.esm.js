@@ -4,28 +4,30 @@ var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
 var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
 var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
+    for (var prop in b || (b = {}))
+        if (__hasOwnProp.call(b, prop))
+            __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+        for (var prop of __getOwnPropSymbols(b)) {
+            if (__propIsEnum.call(b, prop))
+                __defNormalProp(a, prop, b[prop]);
+        }
+    return a;
 };
-import { logJSON, toJSON } from "../json";
-import { IS_FIREBASE_CLI } from "../env";
-import get from "lodash/get";
-const isBrowser = () => ![typeof window, typeof document].includes("undefined");
-const isNode = () => typeof process !== "undefined" && !!process.versions && !!process.versions.node;
+import {logJSON, toJSON} from '../json';
+import {IS_FIREBASE_CLI} from '../env';
+import get from 'lodash/get';
+
+const isBrowser = () => ![typeof window, typeof document].includes('undefined');
+const isNode = () => typeof process !== 'undefined' && !!process.versions &&
+    !!process.versions.node;
 const getFirebaseConfig = (path) => {
-  if (isBrowser()) {
-    console.warn("this function is server-only function");
-    return;
-  }
-  const pwd = process.env.PWD;
-  if (!pwd)
+    if (isBrowser()) {
+        console.warn('this function is server-only function');
+        return;
+    }
+    const pwd = process.env.PWD;
+    if (!pwd)
     throw new Error("getFirebaseConfig error, ensure process.env.PWD exists?");
   const functionsRoot = pwd.split("/functions")[0];
   const firebaseJsonContent = eval("require")("fs").readFileSync(eval("require")("path").join(functionsRoot, "firebase.json"), "utf-8");
@@ -65,12 +67,17 @@ const setFirebaseEmulators = (debug) => {
   }
 };
 const getDefaultProjectName = () => {
-  return getFirebaseConfig("projects.default");
+    return getFirebaseConfig('projects.default');
 };
-const httpsFunctionEndpoint = (functionName, region = "asia-northeast1") => {
-  const functionHost = getEmulatorHost("functions");
-  const project = getDefaultProjectName();
-  return IS_FIREBASE_CLI ? `http://${functionHost}/${project}/${region}/${functionName || process.env.FUNCTION_NAME}` : `https://${region}-${project}.cloudfunctions.net/${functionName || process.env.FUNCTION_NAME}`;
+const httpsFunctionEndpoint = (
+    emulatorsFunctionsPort, functionName, region = 'asia-northeast1') => {
+    const {projectId, locationId} = JSON.parse(process.env.FIREBASE_CONFIG);
+    return IS_FIREBASE_CLI
+        ? `http://localhost:${emulatorsFunctionsPort}/${projectId}/${region ||
+        locationId}/${functionName || process.env.FUNCTION_NAME}`
+        : `https://${region ||
+        locationId}-${projectId}.cloudfunctions.net/${functionName ||
+        process.env.FUNCTION_NAME}`;
 };
 export {
   getDefaultProjectName,

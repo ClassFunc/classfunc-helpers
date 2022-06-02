@@ -95,12 +95,17 @@ const setFirebaseEmulators = (debug) => {
   }
 };
 const getDefaultProjectName = () => {
-  return getFirebaseConfig("projects.default");
+    return getFirebaseConfig('projects.default');
 };
-const httpsFunctionEndpoint = (functionName, region = "asia-northeast1") => {
-  const functionHost = getEmulatorHost("functions");
-  const project = getDefaultProjectName();
-  return import_env.IS_FIREBASE_CLI ? `http://${functionHost}/${project}/${region}/${functionName || process.env.FUNCTION_NAME}` : `https://${region}-${project}.cloudfunctions.net/${functionName || process.env.FUNCTION_NAME}`;
+const httpsFunctionEndpoint = (
+    emulatorsFunctionsPort, functionName, region = 'asia-northeast1') => {
+    const {projectId, locationId} = JSON.parse(process.env.FIREBASE_CONFIG);
+    return import_env.IS_FIREBASE_CLI
+        ? `http://localhost:${emulatorsFunctionsPort}/${projectId}/${region ||
+        locationId}/${functionName || process.env.FUNCTION_NAME}`
+        : `https://${region ||
+        locationId}-${projectId}.cloudfunctions.net/${functionName ||
+        process.env.FUNCTION_NAME}`;
 };
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
