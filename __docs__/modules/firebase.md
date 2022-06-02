@@ -27,7 +27,7 @@
 
 #### Defined in
 
-[firebase/index.d.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/firebase/index.d.ts#L7)
+[firebase/index.d.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/firebase/index.d.ts#L7)
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 #### Defined in
 
-[firebase/index.d.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/firebase/index.d.ts#L4)
+[firebase/index.d.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/firebase/index.d.ts#L4)
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-[firebase/index.d.ts:5](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/firebase/index.d.ts#L5)
+[firebase/index.d.ts:5](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/firebase/index.d.ts#L5)
 
 ___
 
@@ -88,18 +88,19 @@ ___
 
 #### Defined in
 
-[firebase/index.d.ts:3](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/firebase/index.d.ts#L3)
+[firebase/index.d.ts:3](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/firebase/index.d.ts#L3)
 
 ___
 
 ### httpsFunctionEndpoint
 
-▸ **httpsFunctionEndpoint**(`functionName?`, `region?`): `string`
+▸ **httpsFunctionEndpoint**(`emulatorsFunctionsPort`, `functionName?`, `region?`): `string`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
+| `emulatorsFunctionsPort` | `any` |
 | `functionName?` | `string` |
 | `region?` | `string` |
 
@@ -109,7 +110,7 @@ ___
 
 #### Defined in
 
-[firebase/index.d.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/firebase/index.d.ts#L8)
+[firebase/index.d.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/firebase/index.d.ts#L8)
 
 ___
 
@@ -123,7 +124,7 @@ ___
 
 #### Defined in
 
-[firebase/index.d.ts:1](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/firebase/index.d.ts#L1)
+[firebase/index.d.ts:1](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/firebase/index.d.ts#L1)
 
 ___
 
@@ -137,7 +138,7 @@ ___
 
 #### Defined in
 
-[firebase/index.d.ts:2](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/firebase/index.d.ts#L2)
+[firebase/index.d.ts:2](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/firebase/index.d.ts#L2)
 
 ___
 
@@ -157,4 +158,4 @@ ___
 
 #### Defined in
 
-[firebase/index.d.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/firebase/index.d.ts#L6)
+[firebase/index.d.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/firebase/index.d.ts#L6)

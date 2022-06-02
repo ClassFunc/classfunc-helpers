@@ -29,7 +29,7 @@
 
 #### Defined in
 
-[env/index.d.ts:1](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/env/index.d.ts#L1)
+[env/index.d.ts:1](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/env/index.d.ts#L1)
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/env/index.d.ts#L8)
+[env/index.d.ts:8](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/env/index.d.ts#L8)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:13](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/env/index.d.ts#L13)
+[env/index.d.ts:13](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/env/index.d.ts#L13)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:10](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/env/index.d.ts#L10)
+[env/index.d.ts:10](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/env/index.d.ts#L10)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/env/index.d.ts#L7)
+[env/index.d.ts:7](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/env/index.d.ts#L7)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/env/index.d.ts#L11)
+[env/index.d.ts:11](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/env/index.d.ts#L11)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:9](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/env/index.d.ts#L9)
+[env/index.d.ts:9](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/env/index.d.ts#L9)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/env/index.d.ts#L6)
+[env/index.d.ts:6](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/env/index.d.ts#L6)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/env/index.d.ts#L12)
+[env/index.d.ts:12](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/env/index.d.ts#L12)
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/env/index.d.ts#L14)
+[env/index.d.ts:14](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/env/index.d.ts#L14)
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:2](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/env/index.d.ts#L2)
+[env/index.d.ts:2](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/env/index.d.ts#L2)
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:5](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/env/index.d.ts#L5)
+[env/index.d.ts:5](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/env/index.d.ts#L5)
 
 ___
 
@@ -149,7 +149,7 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/env/index.d.ts#L4)
+[env/index.d.ts:4](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/env/index.d.ts#L4)
 
 ___
 
@@ -159,4 +159,4 @@ ___
 
 #### Defined in
 
-[env/index.d.ts:3](https://github.com/ClassFunc/classfunc-helpers/blob/5de563f/env/index.d.ts#L3)
+[env/index.d.ts:3](https://github.com/ClassFunc/classfunc-helpers/blob/e6e921a/env/index.d.ts#L3)
